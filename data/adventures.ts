@@ -1,0 +1,462 @@
+// Import all adventure images
+
+export interface Adventure {
+  id: number;
+  name: string;
+  category: string;
+  description: string;
+  priceRange: string;
+  duration: string;
+  difficulty: "Easy" | "Moderate" | "Challenging" | "Expert";
+  bestTime: string;
+  location: string;
+  website: string;
+  image: string;
+  highlights: string[];
+}
+
+export const adventures: Adventure[] = [
+  // Water Activities
+  {
+    id: 1,
+    name: "Waikiki Surf Lessons",
+    category: "Water Activities",
+    description: "Learn to surf where Duke Kahanamoku pioneered the sport. Professional instructors ensure safe, fun lessons for all skill levels.",
+    priceRange: "$75-150",
+    duration: "2-3 hours",
+    difficulty: "Easy",
+    bestTime: "Morning (7-10 AM)",
+    location: "Waikiki Beach",
+    website: "https://www.hawaiiansurfadventures.com/",
+    image: "/assets/adventure-waikiki-surf.jpg",
+    highlights: ["Beginner Friendly", "Equipment Included", "Small Groups", "Certified Instructors"]
+  },
+  {
+    id: 2,
+    name: "Hanauma Bay Snorkeling",
+    category: "Water Activities",
+    description: "Explore Hawaii's premier marine sanctuary with over 400 species of tropical fish in crystal-clear protected waters.",
+    priceRange: "$25-75",
+    duration: "3-4 hours",
+    difficulty: "Easy",
+    bestTime: "Early Morning (6-9 AM)",
+    location: "Hanauma Bay Nature Preserve",
+    website: "https://hanaumabaystatepark.com/",
+    image: "/assets/adventure-hanauma-snorkel.jpg",
+    highlights: ["Marine Sanctuary", "400+ Fish Species", "Protected Bay", "Eco-Friendly"]
+  },
+  {
+    id: 3,
+    name: "Turtle Canyon Snorkel Tour",
+    category: "Water Activities",
+    description: "Swim with Hawaiian green sea turtles in their natural habitat. See tropical fish, coral reefs, and often dolphins.",
+    priceRange: "$80-120",
+    duration: "2-3 hours",
+    difficulty: "Easy",
+    bestTime: "Morning or Afternoon",
+    location: "Turtle Canyon",
+    website: "https://www.oahudiving.com/",
+    image: "/assets/adventure-turtle-snorkel.jpg",
+    highlights: ["Sea Turtles Guaranteed", "Small Boats", "All Equipment", "Marine Life Expert"]
+  },
+  {
+    id: 4,
+    name: "Stand-Up Paddleboarding",
+    category: "Water Activities",
+    description: "Glide across calm Waikiki waters on a SUP board. Great workout with stunning views of Diamond Head and the coastline.",
+    priceRange: "$40-75",
+    duration: "1-2 hours",
+    difficulty: "Easy",
+    bestTime: "Morning or Late Afternoon",
+    location: "Ala Moana Beach / Waikiki",
+    website: "https://www.bluewaterwaterman.com/",
+    image: "https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=800&h=512&fit=crop",
+    highlights: ["Beginner Friendly", "Core Workout", "Scenic Views", "Equipment Rental"]
+  },
+  {
+    id: 5,
+    name: "Kayak to Lanikai Beach",
+    category: "Water Activities",
+    description: "Paddle through turquoise waters to remote Mokulua Islands. See sea turtles, tropical fish, and pristine beaches.",
+    priceRange: "$80-140",
+    duration: "4-5 hours",
+    difficulty: "Moderate",
+    bestTime: "Early Morning (6-10 AM)",
+    location: "Kailua Beach",
+    website: "https://www.kailuasailboards.com/",
+    image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&h=512&fit=crop",
+    highlights: ["Island Hopping", "Sea Turtles", "Photo Opportunities", "Guided Tours"]
+  },
+
+  // Hiking & Nature
+  {
+    id: 6,
+    name: "Diamond Head Crater Trail",
+    category: "Hiking & Nature",
+    description: "Iconic volcanic crater hike with breathtaking 360° views of Waikiki, Honolulu, and the Pacific Ocean from the summit.",
+    priceRange: "$5",
+    duration: "1.5-2 hours",
+    difficulty: "Moderate",
+    bestTime: "Early Morning (6-8 AM)",
+    location: "Diamond Head State Monument",
+    website: "https://www.hawaiistateparks.org/parks/oahu/diamond-head-state-monument/",
+    image: "/assets/adventure-diamond-head.jpg",
+    highlights: ["360° Views", "Historic Landmark", "Sunrise Spot", "Military Bunkers"]
+  },
+  {
+    id: 7,
+    name: "Manoa Falls Trail",
+    category: "Hiking & Nature",
+    description: "Walk through a lush rainforest to a spectacular 150-foot waterfall. Bamboo forests and tropical flora line the easy trail.",
+    priceRange: "$10 parking",
+    duration: "1-1.5 hours",
+    difficulty: "Easy",
+    bestTime: "Morning (8-11 AM)",
+    location: "Manoa Valley",
+    website: "https://www.honolulu.gov/parks-hbf/site-parks-hbf-site/manoa-falls-trail.html",
+    image: "/assets/adventure-manoa-falls.jpg",
+    highlights: ["150ft Waterfall", "Bamboo Forest", "Easy Trail", "Family Friendly"]
+  },
+  {
+    id: 8,
+    name: "Koko Head Stairs",
+    category: "Hiking & Nature",
+    description: "Challenging railway stairs climb with 1,048 steps. Reward yourself with panoramic views of Hanauma Bay and East Oahu.",
+    priceRange: "Free",
+    duration: "1.5-2.5 hours",
+    difficulty: "Challenging",
+    bestTime: "Early Morning (5-7 AM)",
+    location: "Koko Head District Park",
+    website: "https://www.honolulu.gov/parks-hbf.html",
+    image: "/assets/adventure-koko-head.jpg",
+    highlights: ["1,048 Steps", "Extreme Workout", "Panoramic Views", "Historic Railway"]
+  },
+  {
+    id: 9,
+    name: "Lanikai Pillbox Hike",
+    category: "Hiking & Nature",
+    description: "Short but steep hike to WWII pillboxes with stunning views of turquoise Lanikai Beach and the Mokulua Islands.",
+    priceRange: "Free",
+    duration: "1-1.5 hours",
+    difficulty: "Moderate",
+    bestTime: "Sunrise or Late Afternoon",
+    location: "Kaiwa Ridge Trail, Lanikai",
+    website: "https://www.alltrails.com/trail/us/hawaii/lanikai-pillbox-hike",
+    image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&h=512&fit=crop",
+    highlights: ["Turquoise Views", "WWII Bunkers", "Sunrise Spot", "Instagram Famous"]
+  },
+  {
+    id: 10,
+    name: "Makapuu Lighthouse Trail",
+    category: "Hiking & Nature",
+    description: "Paved coastal trail with whale watching opportunities (winter). Spectacular ocean cliffs and lighthouse views.",
+    priceRange: "Free",
+    duration: "1-1.5 hours",
+    difficulty: "Easy",
+    bestTime: "Morning or Late Afternoon",
+    location: "Makapuu Point",
+    website: "https://www.alltrails.com/trail/us/hawaii/makapuu-point-lighthouse-trail",
+    image: "https://images.unsplash.com/photo-1544198365-f5d60b6d8190?w=800&h=512&fit=crop",
+    highlights: ["Whale Watching", "Paved Trail", "Lighthouse", "Coastal Cliffs"]
+  },
+  {
+    id: 26,
+    name: "Kualoa Ranch Horseback Riding",
+    category: "Hiking & Nature",
+    description: "Ride through the same dramatic valleys where Jurassic Park was filmed. Scenic mountain and ocean views on a historic 4,000-acre ranch.",
+    priceRange: "$95-145",
+    duration: "1-2 hours",
+    difficulty: "Easy",
+    bestTime: "Morning or Afternoon",
+    location: "Kualoa Ranch, Windward Coast",
+    website: "https://www.kualoa.com/",
+    image: "/assets/adventure-kualoa-horseback.jpg",
+    highlights: ["Jurassic Valley", "Ocean Views", "Historic Ranch", "All Levels Welcome"]
+  },
+
+  // Cultural Experiences
+  {
+    id: 11,
+    name: "Pearl Harbor & USS Arizona",
+    category: "Cultural Experiences",
+    description: "Visit the historic WWII memorial site. Powerful tribute to those who served, with museum exhibits and boat tour to memorial.",
+    priceRange: "$0-90",
+    duration: "3-4 hours",
+    difficulty: "Easy",
+    bestTime: "Early Morning (7-9 AM)",
+    location: "Pearl Harbor National Memorial",
+    website: "https://www.nps.gov/valr/index.htm",
+    image: "/assets/adventure-pearl-harbor.jpg",
+    highlights: ["Historic Memorial", "WWII Museum", "USS Arizona", "National Monument"]
+  },
+  {
+    id: 12,
+    name: "Polynesian Cultural Center",
+    category: "Cultural Experiences",
+    description: "Immersive experience featuring six Pacific Island villages. Traditional dances, crafts, luau feast, and spectacular show.",
+    priceRange: "$80-250",
+    duration: "5-8 hours",
+    difficulty: "Easy",
+    bestTime: "All Day Experience",
+    location: "Laie, North Shore",
+    website: "https://www.polynesia.com/",
+    image: "/assets/adventure-polynesian-center.jpg",
+    highlights: ["6 Island Villages", "Traditional Luau", "Evening Show", "Cultural Immersion"]
+  },
+  {
+    id: 13,
+    name: "Iolani Palace Tour",
+    category: "Cultural Experiences",
+    description: "Only royal palace on US soil. Guided tours reveal Hawaiian monarchy history and exquisite Victorian architecture.",
+    priceRange: "$20-30",
+    duration: "1-2 hours",
+    difficulty: "Easy",
+    bestTime: "Morning or Early Afternoon",
+    location: "Downtown Honolulu",
+    website: "https://www.iolanipalace.org/",
+    image: "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=800&h=512&fit=crop",
+    highlights: ["Royal Palace", "Guided Tours", "Hawaiian History", "Victorian Architecture"]
+  },
+  {
+    id: 14,
+    name: "Bishop Museum",
+    category: "Cultural Experiences",
+    description: "Hawaii's premier natural and cultural history museum. Hawaiian artifacts, planetarium, and interactive exhibits.",
+    priceRange: "$25-30",
+    duration: "2-3 hours",
+    difficulty: "Easy",
+    bestTime: "Any Time",
+    location: "Honolulu",
+    website: "https://www.bishopmuseum.org/",
+    image: "/assets/adventure-bishop-museum.jpg",
+    highlights: ["Hawaiian Artifacts", "Planetarium", "Cultural Exhibits", "Family Friendly"]
+  },
+  {
+    id: 15,
+    name: "Traditional Luau Experience",
+    category: "Cultural Experiences",
+    description: "Authentic Hawaiian feast with kalua pig, poi, and traditional dishes. Hula dancing, fire knife performance, and island music.",
+    priceRange: "$100-200",
+    duration: "3-4 hours",
+    difficulty: "Easy",
+    bestTime: "Evening (5-9 PM)",
+    location: "Various Locations",
+    website: "https://www.paradisecovehawaii.com/",
+    image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&h=512&fit=crop",
+    highlights: ["Traditional Feast", "Hula Dancing", "Fire Knife Show", "Ocean Views"]
+  },
+  {
+    id: 27,
+    name: "Kualoa Ranch Movie Site Tour",
+    category: "Cultural Experiences",
+    description: "Explore famous Hollywood filming locations from Jurassic Park, Jurassic World, Lost, Godzilla, Kong: Skull Island, and 50+ other movies and TV shows.",
+    priceRange: "$50-80",
+    duration: "1.5-2 hours",
+    difficulty: "Easy",
+    bestTime: "Morning or Afternoon",
+    location: "Kualoa Ranch, Windward Coast",
+    website: "https://www.kualoa.com/",
+    image: "/assets/adventure-kualoa-movie-tour.jpg",
+    highlights: ["Jurassic Park Valley", "50+ Film Locations", "Lost Sites", "Hollywood History"]
+  },
+
+  // Extreme Adventures
+  {
+    id: 16,
+    name: "Skydiving Oahu",
+    category: "Extreme Adventures",
+    description: "Tandem skydive from 14,000 feet over North Shore. Breathtaking views of turquoise waters, beaches, and mountains.",
+    priceRange: "$250-350",
+    duration: "3-4 hours",
+    difficulty: "Expert",
+    bestTime: "Morning (8-11 AM)",
+    location: "North Shore (Dillingham Airfield)",
+    website: "https://www.pacifichonolulu.com/",
+    image: "/assets/adventure-skydiving.jpg",
+    highlights: ["14,000ft Jump", "Ocean Views", "Tandem Jump", "Video Package Available"]
+  },
+  {
+    id: 17,
+    name: "Shark Cage Diving",
+    category: "Extreme Adventures",
+    description: "Come face-to-face with sharks in their natural habitat. Safe cage dive with expert guides 3 miles offshore.",
+    priceRange: "$120-180",
+    duration: "2-3 hours",
+    difficulty: "Moderate",
+    bestTime: "Morning (7-10 AM)",
+    location: "North Shore",
+    website: "https://www.hawaiisharkencounters.com/",
+    image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&h=512&fit=crop",
+    highlights: ["Shark Encounters", "Safe Cage", "Expert Guides", "GoPro Rentals"]
+  },
+  {
+    id: 18,
+    name: "Helicopter Doors-Off Tour",
+    category: "Extreme Adventures",
+    description: "Epic aerial photography tour over Oahu's dramatic landscapes. See waterfalls, valleys, coastline from open-door helicopter.",
+    priceRange: "$250-400",
+    duration: "45-60 minutes",
+    difficulty: "Moderate",
+    bestTime: "Morning (8-11 AM)",
+    location: "Honolulu Airport Area",
+    website: "https://www.paradises.com/",
+    image: "/assets/adventure-helicopter.jpg",
+    highlights: ["Doors-Off Flight", "Aerial Photography", "Waterfalls & Valleys", "Professional Pilot"]
+  },
+  {
+    id: 19,
+    name: "Parasailing Waikiki",
+    category: "Extreme Adventures",
+    description: "Soar 500 feet above Waikiki Beach with panoramic views. Peaceful flight over crystal waters with Diamond Head backdrop.",
+    priceRange: "$80-120",
+    duration: "1-2 hours",
+    difficulty: "Easy",
+    bestTime: "Morning or Afternoon",
+    location: "Waikiki Beach",
+    website: "https://www.hawaiianparasail.com/",
+    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=512&fit=crop",
+    highlights: ["500ft High", "Diamond Head Views", "Safe & Fun", "No Experience Needed"]
+  },
+  {
+    id: 20,
+    name: "North Shore Zip Line",
+    category: "Extreme Adventures",
+    description: "Fly through the treetops on 6 zip lines including a 750-foot dual racing line. Botanical gardens and mountain views.",
+    priceRange: "$150-200",
+    duration: "2.5-3 hours",
+    difficulty: "Moderate",
+    bestTime: "Morning or Afternoon",
+    location: "North Shore",
+    website: "https://www.climbworksnorthshore.com/",
+    image: "https://images.unsplash.com/photo-1498855926480-d98e83099315?w=800&h=512&fit=crop",
+    highlights: ["6 Zip Lines", "Racing Line", "Mountain Views", "Safety Certified"]
+  },
+  {
+    id: 28,
+    name: "Kualoa Ranch ATV Adventure",
+    category: "Extreme Adventures",
+    description: "Drive ATVs through rugged terrain in movie valleys. See filming locations from Jurassic World while experiencing off-road thrills through ancient Hawaiian fishponds.",
+    priceRange: "$140-190",
+    duration: "1.5-2 hours",
+    difficulty: "Moderate",
+    bestTime: "Morning or Afternoon",
+    location: "Kualoa Ranch, Windward Coast",
+    website: "https://www.kualoa.com/",
+    image: "/assets/adventure-kualoa-atv.jpg",
+    highlights: ["Movie Locations", "Off-Road Thrills", "Jurassic Valley", "Guided Tours"]
+  },
+  {
+    id: 29,
+    name: "Kualoa Ranch Zipline",
+    category: "Extreme Adventures",
+    description: "Soar over Ka'a'awa Valley on 8 ziplines with breathtaking views of movie locations, mountains, and ocean. Same valleys as Jurassic Park and Lost.",
+    priceRange: "$185-225",
+    duration: "3-3.5 hours",
+    difficulty: "Moderate",
+    bestTime: "Morning or Afternoon",
+    location: "Kualoa Ranch, Windward Coast",
+    website: "https://www.kualoa.com/",
+    image: "/assets/adventure-kualoa-zipline.jpg",
+    highlights: ["8 Ziplines", "Ka'a'awa Valley", "Movie Views", "3,000 Acres"]
+  },
+
+  // Beach Activities
+  {
+    id: 21,
+    name: "Waikiki Sunset Catamaran",
+    category: "Beach Activities",
+    description: "Romantic sunset sail along Waikiki coast. Complimentary drinks, live music, and stunning views of Diamond Head at dusk.",
+    priceRange: "$50-90",
+    duration: "1.5-2 hours",
+    difficulty: "Easy",
+    bestTime: "Sunset (5-7 PM)",
+    location: "Waikiki Beach",
+    website: "https://www.maitaicatamaran.net/",
+    image: "/assets/adventure-sunset-cruise.jpg",
+    highlights: ["Sunset Views", "Open Bar", "Live Music", "Diamond Head Views"]
+  },
+  {
+    id: 22,
+    name: "Whale Watching Tour",
+    category: "Beach Activities",
+    description: "Witness humpback whales during migration season (Dec-Apr). Expert naturalists provide insight into these magnificent creatures.",
+    priceRange: "$80-150",
+    duration: "2-3 hours",
+    difficulty: "Easy",
+    bestTime: "Morning (Winter Only)",
+    location: "Various Departure Points",
+    website: "https://www.starofhonolulu.com/",
+    image: "/assets/adventure-whale-watching.jpg",
+    highlights: ["Winter Season", "Expert Guides", "Whale Guarantee", "Educational Tour"]
+  },
+  {
+    id: 23,
+    name: "North Shore Beach Hopping",
+    category: "Beach Activities",
+    description: "Visit iconic surf beaches including Sunset Beach, Banzai Pipeline, and Waimea Bay. Watch pro surfers in winter.",
+    priceRange: "Free (gas only)",
+    duration: "Full Day",
+    difficulty: "Easy",
+    bestTime: "Morning to Afternoon",
+    location: "North Shore",
+    website: "https://www.gohawaii.com/islands/oahu/regions/north-shore",
+    image: "https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=800&h=512&fit=crop",
+    highlights: ["Famous Surf Spots", "Food Trucks", "Pro Surfing", "Scenic Drive"]
+  },
+  {
+    id: 24,
+    name: "Sandbar Kaneohe Bay",
+    category: "Beach Activities",
+    description: "Boat or kayak to the famous shallow sandbar. Crystal-clear waist-deep water perfect for swimming and picnics.",
+    priceRange: "$60-120",
+    duration: "3-4 hours",
+    difficulty: "Easy",
+    bestTime: "Mid-Morning to Early Afternoon",
+    location: "Kaneohe Bay",
+    website: "https://www.kaneohesandbar.com/",
+    image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&h=512&fit=crop",
+    highlights: ["Shallow Sandbar", "Crystal Waters", "Swimming", "Photo Opportunity"]
+  },
+  {
+    id: 25,
+    name: "Lanikai Beach Relaxation",
+    category: "Beach Activities",
+    description: "Visit one of world's most beautiful beaches. Powder-soft sand, turquoise water, and views of Mokulua Islands.",
+    priceRange: "Free",
+    duration: "Half Day or Full Day",
+    difficulty: "Easy",
+    bestTime: "Morning or Late Afternoon",
+    location: "Lanikai, Kailua",
+    website: "https://www.gohawaii.com/islands/oahu/regions/windward-coast/lanikai-beach",
+    image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&h=512&fit=crop",
+    highlights: ["World's Best Beach", "Turquoise Waters", "Island Views", "Swimming & Relaxing"]
+  },
+  {
+    id: 30,
+    name: "Kailua Beach Park",
+    category: "Beach Activities",
+    description: "Award-winning beach with calm waters perfect for swimming, kayaking, and windsurfing. Explore nearby Lanikai Beach, Pillbox hike, and local restaurants in Kailua town.",
+    priceRange: "Free (parking $1.50/hr)",
+    duration: "Half Day or Full Day",
+    difficulty: "Easy",
+    bestTime: "Morning to Afternoon",
+    location: "Kailua, Windward Coast",
+    website: "https://www.gohawaii.com/islands/oahu/regions/windward-coast/kailua-beach-park",
+    image: "/assets/adventure-kailua-beach.jpg",
+    highlights: ["Award-Winning Beach", "Kayak Rentals Nearby", "Lanikai Beach Adjacent", "Kailua Town Shopping"]
+  },
+  {
+    id: 31,
+    name: "Hawaiian Style Rentals & Sales",
+    category: "Beach Activities",
+    description: "Premier moped, scooter, and e-bike rentals in the heart of Waikiki. Explore Oahu at your own pace with quality vehicles including Scoot Coupes, mopeds, and e-bikes. Open daily 8:30 AM - 5:00 PM. Call (866) 91-MOPED for reservations.",
+    priceRange: "$60-120",
+    duration: "4-24 hours",
+    difficulty: "Easy",
+    bestTime: "All Day",
+    location: "2556 Lemon Rd, Honolulu, HI 96815",
+    website: "https://hawaiianstylerentals.com/",
+    image: "/assets/adventure-moped-rental.jpg",
+    highlights: ["Scoot Coupe Rentals", "E-Bikes Available", "Open Daily 8:30-5pm", "Call (866) 91-MOPED"]
+  }
+];
