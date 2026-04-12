@@ -71,6 +71,9 @@ export const metadata: Metadata = {
       "en-US": "https://oahuunlocked.com",
     },
   },
+  verification: {
+    google: "QOzNpJEN7bJ_BfJcvVKyQAh1Xc1RgLYwkIFUygkwvKc",
+  },
   other: {
     "geo.region": "US-HI",
     "geo.placename": "Honolulu, Hawaii",
