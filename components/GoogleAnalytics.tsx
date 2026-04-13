@@ -10,7 +10,7 @@ const GoogleAnalytics = () => {
 
   useEffect(() => {
     if (!GA_MEASUREMENT_ID) {
-      console.warn('Google Analytics: No measurement ID configured. Set VITE_GA_MEASUREMENT_ID in your environment.');
+      console.warn('Google Analytics: No measurement ID configured. Set NEXT_PUBLIC_GA_MEASUREMENT_ID in your environment.');
       return;
     }
 

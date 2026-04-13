@@ -3,9 +3,12 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { adventures } from '@/data/adventures'
 import { slugify } from '@/lib/slugify'
-import { Clock, MapPin, DollarSign, ExternalLink, ChevronLeft, Zap } from 'lucide-react'
+import { Clock, MapPin, DollarSign, ExternalLink, ChevronLeft, Zap, ShoppingBag } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent } from '@/components/ui/card'
+import { adventureGear, amazonSearchUrl, viatorLinks, bookingUrlForLocation } from '@/lib/affiliates'
+import { searchViatorTours, viatorCategorySearch } from '@/lib/viator'
+import ViatorTours from '@/components/ViatorTours'
 
 export async function generateStaticParams() {
   return adventures.map((a) => ({ slug: slugify(a.name) }))
@@ -47,6 +50,9 @@ export default async function AdventurePage({
   const { slug } = await params
   const adventure = adventures.find((a) => slugify(a.name) === slug)
   if (!adventure) notFound()
+
+  const searchTerm = viatorCategorySearch[adventure.category] || adventure.name
+  const viatorTours = await searchViatorTours(searchTerm)
 
   return (
     <div className="min-h-screen bg-background">
@@ -97,6 +103,8 @@ export default async function AdventurePage({
                 </div>
               </CardContent>
             </Card>
+
+            <ViatorTours tours={viatorTours} />
           </div>
 
           {/* Sidebar */}
@@ -146,6 +154,56 @@ export default async function AdventurePage({
               <ExternalLink className="h-4 w-4" />
               Book Now
             </a>
+
+            <a
+              href={bookingUrlForLocation(adventure.location)}
+              target="_blank"
+              rel="noopener noreferrer sponsored"
+              className="flex items-center justify-center gap-2 w-full bg-blue-600 text-white hover:bg-blue-700 px-4 py-3 rounded-lg font-medium text-sm transition-colors"
+            >
+              <ExternalLink className="h-4 w-4" />
+              Find Hotels Nearby
+            </a>
+
+            {viatorLinks[adventure.name] && (
+              <a
+                href={viatorLinks[adventure.name]}
+                target="_blank"
+                rel="noopener noreferrer sponsored"
+                className="flex items-center justify-center gap-2 w-full bg-orange-500 text-white hover:bg-orange-600 px-4 py-3 rounded-lg font-medium text-sm transition-colors"
+              >
+                <ExternalLink className="h-4 w-4" />
+                Book on Viator
+              </a>
+            )}
+
+            {adventureGear[adventure.category] && (
+              <Card>
+                <CardContent className="p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <ShoppingBag className="h-4 w-4 text-muted-foreground" />
+                    <p className="text-sm font-medium">Gear & Essentials</p>
+                  </div>
+                  <ul className="space-y-2">
+                    {adventureGear[adventure.category].map((item) => (
+                      <li key={item.label}>
+                        <a
+                          href={amazonSearchUrl(item.query)}
+                          target="_blank"
+                          rel="noopener noreferrer sponsored"
+                          className="text-sm text-primary hover:underline"
+                        >
+                          {item.label} →
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="text-xs text-muted-foreground mt-3">
+                    As an Amazon Associate we earn from qualifying purchases.
+                  </p>
+                </CardContent>
+              </Card>
+            )}
           </div>
         </div>
       </div>

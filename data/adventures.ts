@@ -113,7 +113,7 @@ export const adventures: Adventure[] = [
     difficulty: "Easy",
     bestTime: "Morning (8-11 AM)",
     location: "Manoa Valley",
-    website: "https://www.honolulu.gov/parks-hbf/site-parks-hbf-site/manoa-falls-trail.html",
+    website: "https://www.alltrails.com/trail/us/hawaii/manoa-falls-trail",
     image: "/assets/adventure-manoa-falls.jpg",
     highlights: ["150ft Waterfall", "Bamboo Forest", "Easy Trail", "Family Friendly"]
   },
@@ -127,7 +127,7 @@ export const adventures: Adventure[] = [
     difficulty: "Challenging",
     bestTime: "Early Morning (5-7 AM)",
     location: "Koko Head District Park",
-    website: "https://www.honolulu.gov/parks-hbf.html",
+    website: "https://www.alltrails.com/trail/us/hawaii/koko-head-district-park-trail",
     image: "/assets/adventure-koko-head.jpg",
     highlights: ["1,048 Steps", "Extreme Workout", "Panoramic Views", "Historic Railway"]
   },
@@ -271,7 +271,7 @@ export const adventures: Adventure[] = [
     difficulty: "Expert",
     bestTime: "Morning (8-11 AM)",
     location: "North Shore (Dillingham Airfield)",
-    website: "https://www.pacifichonolulu.com/",
+    website: "https://www.skydivehawaii.com/",
     image: "/assets/adventure-skydiving.jpg",
     highlights: ["14,000ft Jump", "Ocean Views", "Tandem Jump", "Video Package Available"]
   },
@@ -299,7 +299,7 @@ export const adventures: Adventure[] = [
     difficulty: "Moderate",
     bestTime: "Morning (8-11 AM)",
     location: "Honolulu Airport Area",
-    website: "https://www.paradises.com/",
+    website: "https://www.helicopters-hawaii.com/",
     image: "/assets/adventure-helicopter.jpg",
     highlights: ["Doors-Off Flight", "Aerial Photography", "Waterfalls & Valleys", "Professional Pilot"]
   },
@@ -399,7 +399,7 @@ export const adventures: Adventure[] = [
     difficulty: "Easy",
     bestTime: "Morning to Afternoon",
     location: "North Shore",
-    website: "https://www.gohawaii.com/islands/oahu/regions/north-shore",
+    website: "https://www.gohawaii.com/islands/oahu/regions/north-shore/",
     image: "https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=800&h=512&fit=crop",
     highlights: ["Famous Surf Spots", "Food Trucks", "Pro Surfing", "Scenic Drive"]
   },
@@ -413,7 +413,7 @@ export const adventures: Adventure[] = [
     difficulty: "Easy",
     bestTime: "Mid-Morning to Early Afternoon",
     location: "Kaneohe Bay",
-    website: "https://www.kaneohesandbar.com/",
+    website: "https://kaneohesandbar.net/",
     image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&h=512&fit=crop",
     highlights: ["Shallow Sandbar", "Crystal Waters", "Swimming", "Photo Opportunity"]
   },

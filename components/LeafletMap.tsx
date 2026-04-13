@@ -162,7 +162,7 @@ const LeafletMap: React.FC<LeafletMapProps> = ({
 
   return (
     <div className="w-full space-y-4">
-      <div className="relative h-[400px]">
+      <div className="relative h-[500px]">
         <div 
           id="restaurant-map"
           className="w-full h-full rounded-lg"

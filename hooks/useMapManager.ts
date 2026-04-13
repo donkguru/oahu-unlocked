@@ -40,7 +40,7 @@ export const useMapManager = ({ containerId, center, zoom }: UseMapManagerProps)
         center,
         zoom,
         zoomControl: false,
-        scrollWheelZoom: true,
+        scrollWheelZoom: false,
         touchZoom: true,
         doubleClickZoom: true,
         dragging: true,
@@ -61,6 +61,10 @@ export const useMapManager = ({ containerId, center, zoom }: UseMapManagerProps)
       L.control.zoom({
         position: 'bottomright'
       }).addTo(map);
+
+      // Enable scroll zoom only after user clicks the map
+      map.on('click', () => map.scrollWheelZoom.enable());
+      map.on('mouseout', () => map.scrollWheelZoom.disable());
 
       mapRef.current = map;
       setIsInitialized(true);

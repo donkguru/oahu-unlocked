@@ -9,6 +9,8 @@ import IndianRestaurants from "@/components/IndianRestaurants";
 import OahuAdventures from "@/components/OahuAdventures";
 import OahuGolf from "@/components/OahuGolf";
 import DiningTips from "@/components/DiningTips";
+import dynamic from "next/dynamic";
+const RestaurantMap = dynamic(() => import("@/components/RestaurantMap"), { ssr: false });
 import { SearchProvider } from "@/contexts/SearchContext";
 
 export default function HomeClient() {
@@ -28,6 +30,9 @@ export default function HomeClient() {
         </section>
         <section id="golf">
           <OahuGolf />
+        </section>
+        <section id="explore-map">
+          <RestaurantMap />
         </section>
         <DiningTips />
       </main>

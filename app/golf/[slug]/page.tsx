@@ -3,9 +3,10 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { golfCourses } from '@/data/golfCourses'
 import { slugify } from '@/lib/slugify'
-import { MapPin, Clock, Phone, DollarSign, ExternalLink, ChevronLeft, Flag } from 'lucide-react'
+import { MapPin, Clock, Phone, DollarSign, ExternalLink, ChevronLeft, Flag, ShoppingBag } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent } from '@/components/ui/card'
+import { golfGear, amazonSearchUrl, bookingUrlForLocation } from '@/lib/affiliates'
 
 export async function generateStaticParams() {
   return golfCourses.map((g) => ({ slug: slugify(g.name) }))
@@ -194,6 +195,42 @@ export default async function GolfPage({
               <ExternalLink className="h-4 w-4" />
               Book Tee Time
             </a>
+
+            <a
+              href={bookingUrlForLocation(course.location)}
+              target="_blank"
+              rel="noopener noreferrer sponsored"
+              className="flex items-center justify-center gap-2 w-full bg-blue-600 text-white hover:bg-blue-700 px-4 py-3 rounded-lg font-medium text-sm transition-colors"
+            >
+              <ExternalLink className="h-4 w-4" />
+              Find Hotels Nearby
+            </a>
+
+            <Card>
+              <CardContent className="p-5">
+                <div className="flex items-center gap-2 mb-3">
+                  <ShoppingBag className="h-4 w-4 text-muted-foreground" />
+                  <p className="text-sm font-medium">Golf Essentials</p>
+                </div>
+                <ul className="space-y-2">
+                  {golfGear.map((item) => (
+                    <li key={item.label}>
+                      <a
+                        href={amazonSearchUrl(item.query)}
+                        target="_blank"
+                        rel="noopener noreferrer sponsored"
+                        className="text-sm text-primary hover:underline"
+                      >
+                        {item.label} →
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+                <p className="text-xs text-muted-foreground mt-3">
+                  As an Amazon Associate we earn from qualifying purchases.
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </div>

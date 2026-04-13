@@ -7,6 +7,7 @@ import { RestaurantStructuredData } from '@/components/seo/StructuredData'
 import { MapPin, Clock, Phone, DollarSign, Star, ExternalLink, ChevronLeft } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent } from '@/components/ui/card'
+import { bookingSearchUrl } from '@/lib/affiliates'
 
 export async function generateStaticParams() {
   return restaurants.map((r) => ({ slug: slugify(r.name) }))
@@ -210,6 +211,15 @@ export default async function RestaurantPage({
                         Hotel website →
                       </a>
                     )}
+                    <a
+                      href={bookingSearchUrl(`${restaurant.hotel}, Waikiki, Hawaii`)}
+                      target="_blank"
+                      rel="noopener noreferrer sponsored"
+                      className="mt-3 flex items-center justify-center gap-2 w-full bg-blue-600 text-white hover:bg-blue-700 px-3 py-2 rounded-lg font-medium text-xs transition-colors"
+                    >
+                      <ExternalLink className="h-3 w-3" />
+                      Book this Hotel
+                    </a>
                   </CardContent>
                 </Card>
               )}
