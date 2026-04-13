@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, Utensils, Map, Info, Flag, BedDouble, BookOpen } from "lucide-react";
+import { Menu, Utensils, Map, Info, Flag, BedDouble, BookOpen, Users } from "lucide-react";
 
 const navigation = [
   { name: "Home", href: "/", icon: Utensils },
@@ -14,6 +14,7 @@ const navigation = [
   { name: "Golf", href: "#golf", icon: Flag },
   { name: "Where to Stay", href: "#where-to-stay", icon: BedDouble },
   { name: "Blog", href: "/blog", icon: BookOpen },
+  { name: "About", href: "/about", icon: Users },
 ];
 
 const Header = () => {
