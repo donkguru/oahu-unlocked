@@ -3,7 +3,6 @@ import { Geist } from "next/font/google";
 import { Suspense } from "react";
 import "./globals.css";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
-import GoogleAdSense from "@/components/GoogleAdSense";
 import Footer from "@/components/Footer";
 
 const geist = Geist({
@@ -92,13 +91,23 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const pubId = process.env.NEXT_PUBLIC_ADSENSE_PUB_ID
+
   return (
     <html lang="en" className={`${geist.variable} h-full antialiased`}>
+      <head>
+        {pubId && (
+          <script
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${pubId}`}
+            crossOrigin="anonymous"
+          />
+        )}
+      </head>
       <body className="min-h-full flex flex-col">
         <Suspense fallback={null}>
           <GoogleAnalytics />
         </Suspense>
-        <GoogleAdSense />
         {children}
         <Footer />
       </body>
