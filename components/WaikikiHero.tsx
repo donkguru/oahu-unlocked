@@ -34,7 +34,7 @@ const WaikikiHero = () => {
           
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
             Best Restaurants in
-            <span className="block gradient-text bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+            <span className="block gradient-text">
               Waikiki Hawaii
             </span>
           </h1>
