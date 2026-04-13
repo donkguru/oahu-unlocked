@@ -8,6 +8,8 @@ import { MapPin, Clock, Phone, DollarSign, Star, ExternalLink, ChevronLeft } fro
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent } from '@/components/ui/card'
 import { bookingSearchUrl } from '@/lib/affiliates'
+import { getRelatedRestaurants, getRelatedAdventures, extractArea } from '@/lib/related'
+import RelatedLinks from '@/components/RelatedLinks'
 
 export async function generateStaticParams() {
   return restaurants.map((r) => ({ slug: slugify(r.name) }))
@@ -42,6 +44,14 @@ export default async function RestaurantPage({
   const { slug } = await params
   const restaurant = restaurants.find((r) => slugify(r.name) === slug)
   if (!restaurant) notFound()
+
+  const areaHint = restaurant.address + ' ' + (restaurant.hotel || '')
+  const relatedRestaurants = getRelatedRestaurants(restaurant.name, areaHint).map((r) => ({
+    name: r.name, slug: r.slug, image: r.image, subtitle: r.cuisine
+  }))
+  const relatedAdventures = getRelatedAdventures(restaurant.name, areaHint).map((a) => ({
+    name: a.name, slug: a.slug, image: a.image, subtitle: a.category
+  }))
 
   const faqs: FAQItem[] = [
     {
@@ -250,6 +260,20 @@ export default async function RestaurantPage({
               )}
             </div>
           </div>
+        </div>
+
+        {/* Related content */}
+        <div className="mt-4 pb-12">
+          <RelatedLinks
+            title="More Restaurants Nearby"
+            basePath="/restaurants"
+            items={relatedRestaurants}
+          />
+          <RelatedLinks
+            title="Things to Do Nearby"
+            basePath="/adventures"
+            items={relatedAdventures}
+          />
         </div>
       </div>
     </>

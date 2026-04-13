@@ -7,6 +7,8 @@ import { Clock, MapPin, DollarSign, ExternalLink, ChevronLeft, Zap, ShoppingBag 
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent } from '@/components/ui/card'
 import { adventureGear, amazonSearchUrl, viatorLinks, bookingUrlForLocation } from '@/lib/affiliates'
+import { getRelatedRestaurants, getRelatedAdventures } from '@/lib/related'
+import RelatedLinks from '@/components/RelatedLinks'
 import { searchViatorTours, viatorCategorySearch } from '@/lib/viator'
 import ViatorTours from '@/components/ViatorTours'
 import { AdventureStructuredData, BreadcrumbStructuredData, FAQStructuredData, FAQItem } from '@/components/seo/StructuredData'
@@ -54,6 +56,13 @@ export default async function AdventurePage({
 
   const searchTerm = viatorCategorySearch[adventure.category] || adventure.name
   const viatorTours = await searchViatorTours(searchTerm)
+
+  const relatedRestaurants = getRelatedRestaurants(adventure.name, adventure.location).map((r) => ({
+    name: r.name, slug: r.slug, image: r.image, subtitle: r.cuisine
+  }))
+  const relatedAdventures = getRelatedAdventures(adventure.name, adventure.location).map((a) => ({
+    name: a.name, slug: a.slug, image: a.image, subtitle: a.category
+  }))
 
   const faqs: FAQItem[] = [
     {
@@ -238,6 +247,20 @@ export default async function AdventurePage({
           </div>
         </div>
       </div>
+
+        {/* Related content */}
+        <div className="container mx-auto px-4 pb-12 max-w-4xl">
+          <RelatedLinks
+            title="More Adventures Nearby"
+            basePath="/adventures"
+            items={relatedAdventures}
+          />
+          <RelatedLinks
+            title="Places to Eat Nearby"
+            basePath="/restaurants"
+            items={relatedRestaurants}
+          />
+        </div>
     </div>
     </>
   )

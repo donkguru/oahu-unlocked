@@ -7,6 +7,8 @@ import { MapPin, Clock, Phone, DollarSign, ExternalLink, ChevronLeft, Flag, Shop
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent } from '@/components/ui/card'
 import { golfGear, amazonSearchUrl, bookingUrlForLocation } from '@/lib/affiliates'
+import { getRelatedRestaurants, getRelatedGolf } from '@/lib/related'
+import RelatedLinks from '@/components/RelatedLinks'
 import { GolfCourseStructuredData, BreadcrumbStructuredData, FAQStructuredData, FAQItem } from '@/components/seo/StructuredData'
 
 export async function generateStaticParams() {
@@ -42,6 +44,13 @@ export default async function GolfPage({
   const { slug } = await params
   const course = golfCourses.find((g) => slugify(g.name) === slug)
   if (!course) notFound()
+
+  const relatedRestaurants = getRelatedRestaurants(course.name, course.location).map((r) => ({
+    name: r.name, slug: r.slug, image: r.image, subtitle: r.cuisine
+  }))
+  const relatedGolf = getRelatedGolf(course.name, course.location).map((g) => ({
+    name: g.name, slug: g.slug, image: g.image, subtitle: `${g.type} · ${g.holes} holes`
+  }))
 
   const faqs: FAQItem[] = [
     {
@@ -265,6 +274,20 @@ export default async function GolfPage({
           </div>
         </div>
       </div>
+
+        {/* Related content */}
+        <div className="container mx-auto px-4 pb-12 max-w-4xl">
+          <RelatedLinks
+            title="More Golf Courses Nearby"
+            basePath="/golf"
+            items={relatedGolf}
+          />
+          <RelatedLinks
+            title="Places to Eat Nearby"
+            basePath="/restaurants"
+            items={relatedRestaurants}
+          />
+        </div>
     </div>
     </>
   )
