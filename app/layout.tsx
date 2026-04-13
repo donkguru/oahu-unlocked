@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import "./globals.css";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import Footer from "@/components/Footer";
+import { Analytics } from "@vercel/analytics/next";
 
 const geist = Geist({
   variable: "--font-geist-sans",
@@ -109,6 +110,7 @@ export default function RootLayout({
           <GoogleAnalytics />
         </Suspense>
         {children}
+        <Analytics />
         <Footer />
       </body>
     </html>
