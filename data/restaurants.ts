@@ -709,7 +709,7 @@ export const restaurants: Restaurant[] = [
     address: "59-165 Kamehameha Hwy, Haleiwa, HI 96712",
     description: "Local burger chain serving big juicy burgers with fresh ingredients. Perfect for a hearty meal after surfing.",
     highlights: ["Big Burgers", "Local Chain", "Surf Town Vibes"],
-    website: "https://teddysbiggerburgers.com/",
+    website: "",
     image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&h=400&fit=crop",
     distanceFromDukes: "26 miles",
     walkingTime: "N/A",
