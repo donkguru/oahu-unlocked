@@ -11,7 +11,7 @@ const IndianRestaurants = () => {
 
   return (
     <section className="py-16 px-4 bg-gradient-to-b from-background to-accent/10">
-      <div className="container mx-auto max-w-6xl">
+      <div className="container mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="text-center mb-12">
           <Badge variant="secondary" className="mb-4 text-lg px-4 py-2">

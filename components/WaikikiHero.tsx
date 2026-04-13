@@ -24,7 +24,7 @@ const WaikikiHero = () => {
         <div className="absolute inset-0 bg-background/40" />
       </div>
       
-      <div className="container mx-auto max-w-6xl relative z-10">
+      <div className="container mx-auto max-w-7xl relative z-10">
         {/* Hero Content */}
         <div className="text-center text-foreground mb-12">
           <Badge variant="secondary" className="mb-4 bg-background/20 text-foreground border-border/30">
