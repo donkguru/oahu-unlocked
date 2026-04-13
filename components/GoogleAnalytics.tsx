@@ -31,7 +31,7 @@ const GoogleAnalytics = () => {
       window.dataLayer.push(args);
     };
     
-    window.gtag('js', new Date().toISOString());
+    window.gtag('js', new Date());
     window.gtag('config', GA_MEASUREMENT_ID, {
       send_page_view: true,
       cookie_flags: 'SameSite=None;Secure',
