@@ -69,7 +69,7 @@ const areas = [
 
 export default function WhereToStay() {
   return (
-    <section id="where-to-stay" className="py-16 px-6 bg-muted/30">
+    <section id="where-to-stay" className="py-20 px-6 bg-background">
       <div className="container mx-auto max-w-7xl">
         {/* Header */}
         <div className="text-center mb-12">

@@ -131,7 +131,7 @@ const RestaurantMap = () => {
   }, []);
 
   return (
-    <section className="py-10 sm:py-16 lg:py-20 px-4 sm:px-6">
+    <section className="py-20 px-6 bg-muted/30">
       <div className="container mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">

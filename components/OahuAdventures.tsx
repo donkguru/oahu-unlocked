@@ -30,7 +30,7 @@ const OahuAdventures = () => {
   const filteredAdventures = adventures.filter((adv) => adv.category === activeCategory);
 
   return (
-    <section className="py-16 px-6 bg-background">
+    <section className="py-20 px-6 bg-background">
       <div className="container mx-auto max-w-7xl">
         {/* Header */}
         <div className="text-center mb-12">

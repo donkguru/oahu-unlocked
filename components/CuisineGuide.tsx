@@ -120,7 +120,7 @@ const CuisineGuide = () => {
   const categoryGroups = groupRestaurantsByCategory();
 
   return (
-    <section id="cuisine" className="py-20 px-6">
+    <section id="cuisine" className="py-20 px-6 bg-background">
       <div className="container mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="text-center mb-16">

@@ -5,14 +5,14 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, Utensils, Map, Info, BookOpen, Flag } from "lucide-react";
+import { Menu, Utensils, Map, Info, BookOpen, Flag, BedDouble } from "lucide-react";
 
 const navigation = [
   { name: "Home", href: "/", icon: Utensils },
   { name: "Restaurants", href: "#featured-restaurants", icon: Utensils },
-  { name: "Cuisine Guide", href: "#cuisine", icon: BookOpen },
   { name: "Adventures", href: "#adventures", icon: Map },
   { name: "Golf", href: "#golf", icon: Flag },
+  { name: "Where to Stay", href: "#where-to-stay", icon: BedDouble },
   { name: "Local Insights", href: "#insights", icon: Info },
 ];
 

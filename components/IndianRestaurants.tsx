@@ -10,7 +10,7 @@ const IndianRestaurants = () => {
   const indianRestaurants = restaurants.filter(r => r.cuisine === "Indian");
 
   return (
-    <section className="py-16 px-4 bg-gradient-to-b from-background to-accent/10">
+    <section className="py-20 px-6 bg-primary/5">
       <div className="container mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="text-center mb-12">

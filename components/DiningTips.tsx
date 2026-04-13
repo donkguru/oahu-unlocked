@@ -180,7 +180,7 @@ const culturalInsights = [
 
 const DiningTips = () => {
   return (
-    <section className="py-20 px-6 bg-muted/30">
+    <section className="py-20 px-6 bg-background">
       <div className="container mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="text-center mb-16">

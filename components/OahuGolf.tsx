@@ -62,7 +62,7 @@ const OahuGolf = () => {
   };
 
   return (
-    <section id="golf" className="py-16 px-4 bg-gradient-to-b from-background to-muted/20">
+    <section id="golf" className="py-20 px-6 bg-muted/30">
       <div className="container mx-auto max-w-7xl">
         {/* Header */}
         <div className="text-center mb-12">
