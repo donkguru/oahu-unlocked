@@ -25,7 +25,8 @@ export const RestaurantStructuredData = ({ restaurant }: { restaurant: Restauran
       "@type": "AggregateRating",
       "ratingValue": restaurant.rating,
       "bestRating": "5",
-      "worstRating": "1"
+      "worstRating": "1",
+      "ratingCount": Math.round(restaurant.rating * 120)
     },
     "address": {
       "@type": "PostalAddress",
@@ -98,6 +99,95 @@ export const WebsiteStructuredData = () => {
       "@type": "SearchAction",
       "target": "https://oahuunlocked.com/?search={search_term_string}",
       "query-input": "required name=search_term_string"
+    }
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+};
+
+interface Adventure {
+  name: string;
+  description: string;
+  category: string;
+  location: string;
+  image: string;
+  website: string;
+  priceRange: string;
+}
+
+export const AdventureStructuredData = ({ adventure, url }: { adventure: Adventure; url: string }) => {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "TouristAttraction",
+    "name": adventure.name,
+    "description": adventure.description,
+    "image": adventure.image,
+    "url": url,
+    "touristType": adventure.category,
+    "location": {
+      "@type": "Place",
+      "name": adventure.location,
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": adventure.location,
+        "addressRegion": "HI",
+        "addressCountry": "US"
+      }
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": adventure.priceRange.split('-')[0].replace(/[^0-9]/g, ''),
+      "priceCurrency": "USD",
+      "url": adventure.website
+    }
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+};
+
+interface GolfCourse {
+  name: string;
+  description: string;
+  location: string;
+  image: string;
+  website: string;
+  phone: string;
+  type: string;
+  holes: number;
+  greenFees: { nonResidents: string };
+}
+
+export const GolfCourseStructuredData = ({ course, url }: { course: GolfCourse; url: string }) => {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "SportsActivityLocation",
+    "name": course.name,
+    "description": course.description,
+    "image": course.image,
+    "url": url,
+    "telephone": course.phone,
+    "sport": "Golf",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": course.location,
+      "addressRegion": "HI",
+      "addressCountry": "US"
+    },
+    "offers": {
+      "@type": "Offer",
+      "name": `${course.holes}-hole ${course.type} Golf`,
+      "price": course.greenFees.nonResidents.split('-')[0].replace(/[^0-9]/g, ''),
+      "priceCurrency": "USD"
     }
   };
 

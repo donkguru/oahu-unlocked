@@ -9,6 +9,7 @@ import { Card, CardContent } from '@/components/ui/card'
 import { adventureGear, amazonSearchUrl, viatorLinks, bookingUrlForLocation } from '@/lib/affiliates'
 import { searchViatorTours, viatorCategorySearch } from '@/lib/viator'
 import ViatorTours from '@/components/ViatorTours'
+import { AdventureStructuredData, BreadcrumbStructuredData } from '@/components/seo/StructuredData'
 
 export async function generateStaticParams() {
   return adventures.map((a) => ({ slug: slugify(a.name) }))
@@ -55,6 +56,16 @@ export default async function AdventurePage({
   const viatorTours = await searchViatorTours(searchTerm)
 
   return (
+    <>
+      <AdventureStructuredData
+        adventure={adventure}
+        url={`https://oahuunlocked.com/adventures/${slug}`}
+      />
+      <BreadcrumbStructuredData items={[
+        { name: 'Home', url: 'https://oahuunlocked.com' },
+        { name: 'Adventures', url: 'https://oahuunlocked.com/#adventures' },
+        { name: adventure.name, url: `https://oahuunlocked.com/adventures/${slug}` },
+      ]} />
     <div className="min-h-screen bg-background">
       {/* Hero */}
       <div className="relative h-64 md:h-96 bg-muted overflow-hidden">
@@ -208,5 +219,6 @@ export default async function AdventurePage({
         </div>
       </div>
     </div>
+    </>
   )
 }

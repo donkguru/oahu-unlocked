@@ -7,6 +7,7 @@ import { MapPin, Clock, Phone, DollarSign, ExternalLink, ChevronLeft, Flag, Shop
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent } from '@/components/ui/card'
 import { golfGear, amazonSearchUrl, bookingUrlForLocation } from '@/lib/affiliates'
+import { GolfCourseStructuredData, BreadcrumbStructuredData } from '@/components/seo/StructuredData'
 
 export async function generateStaticParams() {
   return golfCourses.map((g) => ({ slug: slugify(g.name) }))
@@ -43,6 +44,16 @@ export default async function GolfPage({
   if (!course) notFound()
 
   return (
+    <>
+      <GolfCourseStructuredData
+        course={course}
+        url={`https://oahuunlocked.com/golf/${slug}`}
+      />
+      <BreadcrumbStructuredData items={[
+        { name: 'Home', url: 'https://oahuunlocked.com' },
+        { name: 'Golf', url: 'https://oahuunlocked.com/#golf' },
+        { name: course.name, url: `https://oahuunlocked.com/golf/${slug}` },
+      ]} />
     <div className="min-h-screen bg-background">
       {/* Hero */}
       <div className="relative h-64 md:h-96 bg-muted overflow-hidden">
@@ -235,5 +246,6 @@ export default async function GolfPage({
         </div>
       </div>
     </div>
+    </>
   )
 }

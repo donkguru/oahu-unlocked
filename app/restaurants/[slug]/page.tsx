@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { restaurants } from '@/data/restaurants'
 import { slugify } from '@/lib/slugify'
-import { RestaurantStructuredData } from '@/components/seo/StructuredData'
+import { RestaurantStructuredData, BreadcrumbStructuredData } from '@/components/seo/StructuredData'
 import { MapPin, Clock, Phone, DollarSign, Star, ExternalLink, ChevronLeft } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent } from '@/components/ui/card'
@@ -58,6 +58,11 @@ export default async function RestaurantPage({
           image: restaurant.image,
         }}
       />
+      <BreadcrumbStructuredData items={[
+        { name: 'Home', url: 'https://oahuunlocked.com' },
+        { name: 'Restaurants', url: 'https://oahuunlocked.com/#featured-restaurants' },
+        { name: restaurant.name, url: `https://oahuunlocked.com/restaurants/${slug}` },
+      ]} />
 
       <div className="min-h-screen bg-background">
         {/* Hero image */}
