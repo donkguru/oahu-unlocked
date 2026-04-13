@@ -119,7 +119,7 @@ const FeaturedRestaurants = () => {
                     <div className="relative h-48 overflow-hidden">
                       <img 
                         src={restaurant.image} 
-                        alt={`${restaurant.name} restaurant at ${hotelGroup.hotel}`}
+                        alt={`${restaurant.name} — ${restaurant.cuisine} restaurant in Waikiki, Oahu Hawaii`}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                         loading="lazy"
                       />

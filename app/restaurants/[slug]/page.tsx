@@ -64,7 +64,7 @@ export default async function RestaurantPage({
         <div className="relative h-64 md:h-96 bg-muted overflow-hidden">
           <img
             src={restaurant.image}
-            alt={restaurant.name}
+            alt={`${restaurant.name} — ${restaurant.cuisine} restaurant in ${restaurant.address.split(',').slice(-3).join(',').trim()}, Oahu Hawaii`}
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />

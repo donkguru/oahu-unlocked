@@ -135,7 +135,7 @@ const OahuGolf = () => {
                   <div className="relative h-48 overflow-hidden">
                     <img 
                       src={course.image} 
-                      alt={`${course.name} - ${course.location}`}
+                      alt={`${course.name} golf course — ${course.location}, Oahu Hawaii`}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                     />
                     <Badge 

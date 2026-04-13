@@ -34,7 +34,7 @@ const IndianRestaurants = () => {
               <div className="relative h-40 overflow-hidden">
                 <img
                   src={restaurant.image}
-                  alt={restaurant.name}
+                  alt={`${restaurant.name} — Indian restaurant in Honolulu, Oahu Hawaii`}
                   className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                 />
                 <div className="absolute top-4 right-4 bg-background/90 backdrop-blur-sm px-3 py-1 rounded-full">

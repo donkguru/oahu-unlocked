@@ -48,7 +48,7 @@ export default async function GolfPage({
       <div className="relative h-64 md:h-96 bg-muted overflow-hidden">
         <img
           src={course.image}
-          alt={course.name}
+          alt={`${course.name} — ${course.type} golf course in ${course.location}, Oahu Hawaii`}
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />

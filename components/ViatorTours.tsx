@@ -22,7 +22,7 @@ export default function ViatorTours({ tours }: { tours: ViatorTour[] }) {
                 <div className="h-40 overflow-hidden bg-muted">
                   <img
                     src={tour.image}
-                    alt={tour.title}
+                    alt={`${tour.title} — Oahu Hawaii tour via Viator`}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
