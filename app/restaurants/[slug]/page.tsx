@@ -10,6 +10,7 @@ import { Card, CardContent } from '@/components/ui/card'
 import { bookingSearchUrl } from '@/lib/affiliates'
 import { getRelatedRestaurants, getRelatedAdventures, extractArea } from '@/lib/related'
 import RelatedLinks from '@/components/RelatedLinks'
+import { restaurantReviews } from '@/data/reviews'
 
 export async function generateStaticParams() {
   return restaurants.map((r) => ({ slug: slugify(r.name) }))
@@ -133,6 +134,15 @@ export default async function RestaurantPage({
                   <p className="text-muted-foreground leading-relaxed">{restaurant.description}</p>
                 </CardContent>
               </Card>
+
+              {restaurantReviews[restaurant.id] && (
+                <Card className="border-primary/20 bg-primary/5">
+                  <CardContent className="p-6">
+                    <h2 className="text-xl font-semibold mb-3">Our Take</h2>
+                    <p className="text-foreground leading-relaxed italic">&ldquo;{restaurantReviews[restaurant.id]}&rdquo;</p>
+                  </CardContent>
+                </Card>
+              )}
 
               {restaurant.specialties.length > 0 && (
                 <Card>

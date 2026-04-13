@@ -9,6 +9,7 @@ import { Card, CardContent } from '@/components/ui/card'
 import { adventureGear, amazonSearchUrl, viatorLinks, bookingUrlForLocation } from '@/lib/affiliates'
 import { getRelatedRestaurants, getRelatedAdventures } from '@/lib/related'
 import RelatedLinks from '@/components/RelatedLinks'
+import { adventureReviews } from '@/data/reviews'
 import { searchViatorTours, viatorCategorySearch } from '@/lib/viator'
 import ViatorTours from '@/components/ViatorTours'
 import { AdventureStructuredData, BreadcrumbStructuredData, FAQStructuredData, FAQItem } from '@/components/seo/StructuredData'
@@ -132,6 +133,15 @@ export default async function AdventurePage({
                 <p className="text-muted-foreground leading-relaxed">{adventure.description}</p>
               </CardContent>
             </Card>
+
+            {adventureReviews[adventure.id] && (
+              <Card className="border-primary/20 bg-primary/5">
+                <CardContent className="p-6">
+                  <h2 className="text-xl font-semibold mb-3">Our Take</h2>
+                  <p className="text-foreground leading-relaxed italic">&ldquo;{adventureReviews[adventure.id]}&rdquo;</p>
+                </CardContent>
+              </Card>
+            )}
 
             <Card>
               <CardContent className="p-6">

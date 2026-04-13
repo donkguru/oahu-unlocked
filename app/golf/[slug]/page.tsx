@@ -9,6 +9,7 @@ import { Card, CardContent } from '@/components/ui/card'
 import { golfGear, amazonSearchUrl, bookingUrlForLocation } from '@/lib/affiliates'
 import { getRelatedRestaurants, getRelatedGolf } from '@/lib/related'
 import RelatedLinks from '@/components/RelatedLinks'
+import { golfReviews } from '@/data/reviews'
 import { GolfCourseStructuredData, BreadcrumbStructuredData, FAQStructuredData, FAQItem } from '@/components/seo/StructuredData'
 
 export async function generateStaticParams() {
@@ -118,6 +119,15 @@ export default async function GolfPage({
                 <p className="text-muted-foreground leading-relaxed">{course.description}</p>
               </CardContent>
             </Card>
+
+            {golfReviews[course.id] && (
+              <Card className="border-primary/20 bg-primary/5">
+                <CardContent className="p-6">
+                  <h2 className="text-xl font-semibold mb-3">Our Take</h2>
+                  <p className="text-foreground leading-relaxed italic">&ldquo;{golfReviews[course.id]}&rdquo;</p>
+                </CardContent>
+              </Card>
+            )}
 
             <Card>
               <CardContent className="p-6">
