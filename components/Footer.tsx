@@ -23,6 +23,7 @@ const footerNav = [
   {
     heading: "Site",
     links: [
+      { label: "Blog", href: "/blog" },
       { label: "About", href: "/about" },
       { label: "Sitemap", href: "/sitemap.xml" },
     ],

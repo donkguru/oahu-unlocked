@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, Utensils, Map, Info, BookOpen, Flag, BedDouble } from "lucide-react";
+import { Menu, Utensils, Map, Info, Flag, BedDouble, BookOpen } from "lucide-react";
 
 const navigation = [
   { name: "Home", href: "/", icon: Utensils },
@@ -13,7 +13,7 @@ const navigation = [
   { name: "Adventures", href: "#adventures", icon: Map },
   { name: "Golf", href: "#golf", icon: Flag },
   { name: "Where to Stay", href: "#where-to-stay", icon: BedDouble },
-  { name: "Local Insights", href: "#insights", icon: Info },
+  { name: "Blog", href: "/blog", icon: BookOpen },
 ];
 
 const Header = () => {
@@ -37,6 +37,7 @@ const Header = () => {
 
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
+    if (!href.startsWith("#")) return pathname.startsWith(href);
     return false;
   };
 
@@ -53,13 +54,22 @@ const Header = () => {
         <nav className="hidden md:flex items-center space-x-6">
           {navigation.map((item) => {
             const Icon = item.icon;
+            const cls = `flex items-center space-x-1 px-3 py-2 text-sm font-medium rounded-md transition-colors hover:bg-accent hover:text-accent-foreground ${
+              isActive(item.href) ? "bg-accent text-accent-foreground" : "text-muted-foreground"
+            }`
+            if (!item.href.startsWith("#") && item.href !== "/") {
+              return (
+                <Link key={item.name} href={item.href} className={cls}>
+                  <Icon className="h-4 w-4" />
+                  <span>{item.name}</span>
+                </Link>
+              )
+            }
             return (
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className={`flex items-center space-x-1 px-3 py-2 text-sm font-medium rounded-md transition-colors hover:bg-accent hover:text-accent-foreground ${
-                  isActive(item.href) ? "bg-accent text-accent-foreground" : "text-muted-foreground"
-                }`}
+                className={cls}
               >
                 <Icon className="h-4 w-4" />
                 <span>{item.name}</span>
