@@ -19,30 +19,29 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Please enter a valid email address.' }, { status: 400 })
   }
 
-  // ── Mailchimp integration (optional) ──────────────────────────────────────
-  // To enable, set these env vars in Vercel:
-  //   MAILCHIMP_API_KEY   e.g. abc123-us1
-  //   MAILCHIMP_LIST_ID   e.g. a1b2c3d4e5
-  // The data centre is the suffix after the dash in your API key (e.g. "us1")
-  const apiKey = process.env.MAILCHIMP_API_KEY
-  const listId = process.env.MAILCHIMP_LIST_ID
+  // ── Brevo integration ─────────────────────────────────────────────────────
+  const apiKey = process.env.BREVO_API_KEY
+  const listId = process.env.BREVO_LIST_ID
 
   if (apiKey && listId) {
-    const dc = apiKey.split('-')[1]
-    const url = `https://${dc}.api.mailchimp.com/3.0/lists/${listId}/members`
-    const res = await fetch(url, {
+    const res = await fetch('https://api.brevo.com/v3/contacts', {
       method: 'POST',
       headers: {
-        Authorization: `Bearer ${apiKey}`,
+        'api-key': apiKey,
         'Content-Type': 'application/json',
+        'accept': 'application/json',
       },
-      body: JSON.stringify({ email_address: email, status: 'subscribed' }),
+      body: JSON.stringify({
+        email,
+        listIds: [parseInt(listId)],
+        updateEnabled: true,
+      }),
     })
 
     if (!res.ok) {
       const data = await res.json().catch(() => ({}))
-      // 400 with title "Member Exists" is fine — already subscribed
-      if (data.title !== 'Member Exists') {
+      // code 'duplicate_parameter' means already subscribed — treat as success
+      if (data.code !== 'duplicate_parameter') {
         return NextResponse.json({ error: 'Subscription failed. Please try again.' }, { status: 500 })
       }
     }
