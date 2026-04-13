@@ -1,5 +1,6 @@
 'use client'
 
+import Link from "next/link";
 import { ExternalLink } from "@/components/ui/external-link";
 import { MapPin, Star, Waves, Mountain, UtensilsCrossed } from "lucide-react";
 import { bookingSearchUrl } from "@/lib/affiliates";
@@ -7,6 +8,7 @@ import { bookingSearchUrl } from "@/lib/affiliates";
 const areas = [
   {
     name: "Waikiki",
+    neighborhoodSlug: "waikiki",
     tagline: "Beach, nightlife & dining at your doorstep",
     description: "The heart of Oahu tourism. Walking distance to the best restaurants, surf lessons, and Diamond Head.",
     icon: Waves,
@@ -17,6 +19,7 @@ const areas = [
   },
   {
     name: "North Shore",
+    neighborhoodSlug: "north-shore",
     tagline: "Surf culture, shrimp trucks & small-town charm",
     description: "World-famous surf breaks, Giovanni's Shrimp Truck, and the laid-back vibe of Haleiwa town.",
     icon: Mountain,
@@ -27,6 +30,7 @@ const areas = [
   },
   {
     name: "Kailua",
+    neighborhoodSlug: "kailua",
     tagline: "Windward coast beaches & boutique town",
     description: "Home to Lanikai Beach and Kailua Beach Park. Quieter than Waikiki with excellent local restaurants.",
     icon: UtensilsCrossed,
@@ -37,6 +41,7 @@ const areas = [
   },
   {
     name: "Ko Olina",
+    neighborhoodSlug: "ko-olina",
     tagline: "Resort lagoons on the west side",
     description: "Calm, family-friendly lagoons away from the crowds. Home to Disney Aulani and Four Seasons.",
     icon: Star,
@@ -47,6 +52,7 @@ const areas = [
   },
   {
     name: "Kaneohe",
+    neighborhoodSlug: "kaneohe",
     tagline: "Lush Windward side, close to Kualoa",
     description: "Gateway to Kualoa Ranch, He'eia Pier, and the famous Kaneohe Bay sandbar. Lush and green.",
     icon: Mountain,
@@ -57,6 +63,7 @@ const areas = [
   },
   {
     name: "Honolulu",
+    neighborhoodSlug: null,
     tagline: "City centre — museums, culture & food",
     description: "Near Chinatown, Iolani Palace, and the best local Hawaiian food spots. Urban Oahu at its finest.",
     icon: UtensilsCrossed,
@@ -132,6 +139,14 @@ export default function WhereToStay() {
                   >
                     Find Hotels in {area.name}
                   </ExternalLink>
+                  {area.neighborhoodSlug && (
+                    <Link
+                      href={`/neighborhoods/${area.neighborhoodSlug}`}
+                      className="mt-2 w-full inline-flex items-center justify-center gap-1 text-sm text-primary hover:underline font-medium"
+                    >
+                      Explore {area.name} area guide →
+                    </Link>
+                  )}
                 </div>
               </div>
             );

@@ -14,10 +14,11 @@ const footerNav = [
   {
     heading: "Areas",
     links: [
-      { label: "Waikiki", href: "/#featured-restaurants" },
-      { label: "North Shore", href: "/#featured-restaurants" },
-      { label: "Kailua", href: "/#featured-restaurants" },
-      { label: "Kaneohe", href: "/#featured-restaurants" },
+      { label: "Waikiki", href: "/neighborhoods/waikiki" },
+      { label: "North Shore", href: "/neighborhoods/north-shore" },
+      { label: "Kailua", href: "/neighborhoods/kailua" },
+      { label: "Kaneohe", href: "/neighborhoods/kaneohe" },
+      { label: "Ko Olina", href: "/neighborhoods/ko-olina" },
     ],
   },
   {
