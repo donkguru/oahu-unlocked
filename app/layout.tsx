@@ -3,6 +3,7 @@ import { Geist } from "next/font/google";
 import { Suspense } from "react";
 import "./globals.css";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import GoogleAdSense from "@/components/GoogleAdSense";
 import Footer from "@/components/Footer";
 
 const geist = Geist({
@@ -97,6 +98,7 @@ export default function RootLayout({
         <Suspense fallback={null}>
           <GoogleAnalytics />
         </Suspense>
+        <GoogleAdSense />
         {children}
         <Footer />
       </body>

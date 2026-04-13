@@ -10,6 +10,8 @@ import { MapPin, BedDouble, ChevronRight } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import Header from '@/components/Header'
 import { BreadcrumbStructuredData, FAQStructuredData } from '@/components/seo/StructuredData'
+import AdUnit from '@/components/AdUnit'
+import { AD_SLOTS } from '@/lib/adSlots'
 
 export async function generateStaticParams() {
   return neighborhoods.map((n) => ({ area: n.slug }))
@@ -181,6 +183,9 @@ export default async function NeighborhoodPage({
               </div>
             </section>
           )}
+
+          {/* Ad unit between content and FAQ */}
+          <AdUnit slot={AD_SLOTS.neighborhoodMid} format="horizontal" className="py-2" />
 
           {/* FAQ */}
           <section>

@@ -5,6 +5,8 @@ import { posts, getPost } from '@/data/posts'
 import { ChevronLeft } from 'lucide-react'
 import Header from '@/components/Header'
 import { BreadcrumbStructuredData, FAQStructuredData } from '@/components/seo/StructuredData'
+import AdUnit from '@/components/AdUnit'
+import { AD_SLOTS } from '@/lib/adSlots'
 
 export async function generateStaticParams() {
   return posts.map((p) => ({ slug: p.slug }))
@@ -104,36 +106,47 @@ export default async function BlogPost({
 
           <div className="prose-content space-y-5">
             {post.sections.map((section, i) => {
-              if (section.type === 'h2') {
-                return <h2 key={i} className="text-2xl font-bold mt-10 mb-3 text-foreground">{section.content as string}</h2>
-              }
-              if (section.type === 'h3') {
-                return <h3 key={i} className="text-xl font-semibold mt-6 mb-2 text-foreground">{section.content as string}</h3>
-              }
-              if (section.type === 'p') {
-                return <p key={i} className="text-base text-foreground/80 leading-relaxed">{section.content as string}</p>
-              }
-              if (section.type === 'ul') {
-                return (
-                  <ul key={i} className="space-y-2 pl-1">
-                    {(section.content as string[]).map((item, j) => (
-                      <li key={j} className="flex items-start gap-2 text-sm text-foreground/80">
-                        <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                )
-              }
-              if (section.type === 'tip') {
-                return (
-                  <div key={i} className="rounded-xl bg-accent/10 border border-accent/30 p-4">
-                    <p className="text-sm font-semibold text-accent mb-1">Local Tip</p>
-                    <p className="text-sm text-foreground/80 leading-relaxed">{section.content as string}</p>
-                  </div>
-                )
-              }
-              return null
+              const el = (() => {
+                if (section.type === 'h2') {
+                  return <h2 key={i} className="text-2xl font-bold mt-10 mb-3 text-foreground">{section.content as string}</h2>
+                }
+                if (section.type === 'h3') {
+                  return <h3 key={i} className="text-xl font-semibold mt-6 mb-2 text-foreground">{section.content as string}</h3>
+                }
+                if (section.type === 'p') {
+                  return <p key={i} className="text-base text-foreground/80 leading-relaxed">{section.content as string}</p>
+                }
+                if (section.type === 'ul') {
+                  return (
+                    <ul key={i} className="space-y-2 pl-1">
+                      {(section.content as string[]).map((item, j) => (
+                        <li key={j} className="flex items-start gap-2 text-sm text-foreground/80">
+                          <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  )
+                }
+                if (section.type === 'tip') {
+                  return (
+                    <div key={i} className="rounded-xl bg-accent/10 border border-accent/30 p-4">
+                      <p className="text-sm font-semibold text-accent mb-1">Local Tip</p>
+                      <p className="text-sm text-foreground/80 leading-relaxed">{section.content as string}</p>
+                    </div>
+                  )
+                }
+                return null
+              })()
+
+              return (
+                <>
+                  {el}
+                  {i === 2 && (
+                    <AdUnit key="blog-mid-ad" slot={AD_SLOTS.blogPostMid} format="rectangle" className="my-6" />
+                  )}
+                </>
+              )
             })}
           </div>
 
