@@ -9,7 +9,7 @@ import { Card, CardContent } from '@/components/ui/card'
 import { adventureGear, amazonSearchUrl, viatorLinks, bookingUrlForLocation } from '@/lib/affiliates'
 import { searchViatorTours, viatorCategorySearch } from '@/lib/viator'
 import ViatorTours from '@/components/ViatorTours'
-import { AdventureStructuredData, BreadcrumbStructuredData } from '@/components/seo/StructuredData'
+import { AdventureStructuredData, BreadcrumbStructuredData, FAQStructuredData, FAQItem } from '@/components/seo/StructuredData'
 
 export async function generateStaticParams() {
   return adventures.map((a) => ({ slug: slugify(a.name) }))
@@ -55,6 +55,25 @@ export default async function AdventurePage({
   const searchTerm = viatorCategorySearch[adventure.category] || adventure.name
   const viatorTours = await searchViatorTours(searchTerm)
 
+  const faqs: FAQItem[] = [
+    {
+      question: `How difficult is ${adventure.name}?`,
+      answer: `${adventure.name} is rated ${adventure.difficulty} difficulty. ${adventure.description}`
+    },
+    {
+      question: `How long does ${adventure.name} take?`,
+      answer: `${adventure.name} typically takes ${adventure.duration}. The best time to go is ${adventure.bestTime}.`
+    },
+    {
+      question: `How much does ${adventure.name} cost?`,
+      answer: `${adventure.name} costs approximately ${adventure.priceRange}. It is located at ${adventure.location} on Oahu, Hawaii.`
+    },
+    {
+      question: `What should I bring for ${adventure.name}?`,
+      answer: `For ${adventure.name}, key highlights include: ${adventure.highlights.join(', ')}. Check local operators for specific gear requirements.`
+    }
+  ]
+
   return (
     <>
       <AdventureStructuredData
@@ -66,6 +85,7 @@ export default async function AdventurePage({
         { name: 'Adventures', url: 'https://oahuunlocked.com/#adventures' },
         { name: adventure.name, url: `https://oahuunlocked.com/adventures/${slug}` },
       ]} />
+      <FAQStructuredData faqs={faqs} />
     <div className="min-h-screen bg-background">
       {/* Hero */}
       <div className="relative h-64 md:h-96 bg-muted overflow-hidden">

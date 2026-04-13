@@ -7,7 +7,7 @@ import { MapPin, Clock, Phone, DollarSign, ExternalLink, ChevronLeft, Flag, Shop
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent } from '@/components/ui/card'
 import { golfGear, amazonSearchUrl, bookingUrlForLocation } from '@/lib/affiliates'
-import { GolfCourseStructuredData, BreadcrumbStructuredData } from '@/components/seo/StructuredData'
+import { GolfCourseStructuredData, BreadcrumbStructuredData, FAQStructuredData, FAQItem } from '@/components/seo/StructuredData'
 
 export async function generateStaticParams() {
   return golfCourses.map((g) => ({ slug: slugify(g.name) }))
@@ -43,6 +43,25 @@ export default async function GolfPage({
   const course = golfCourses.find((g) => slugify(g.name) === slug)
   if (!course) notFound()
 
+  const faqs: FAQItem[] = [
+    {
+      question: `How much are green fees at ${course.name}?`,
+      answer: `Non-resident green fees at ${course.name} are ${course.greenFees.nonResidents}.${course.greenFees.residents ? ` Hawaii residents pay ${course.greenFees.residents}.` : ''}${course.greenFees.twilight ? ` Twilight rates are ${course.greenFees.twilight}.` : ''}`
+    },
+    {
+      question: `Is ${course.name} public or private?`,
+      answer: `${course.name} is a ${course.type} golf course located in ${course.location}, Oahu, Hawaii. It was established in ${course.yearEstablished} and designed by ${course.designer}.`
+    },
+    {
+      question: `How many holes does ${course.name} have?`,
+      answer: `${course.name} is a ${course.holes}-hole course with a course rating of ${course.courseRating} and slope of ${course.slope}. Total yardage is ${course.yardage}.`
+    },
+    {
+      question: `What is the signature feature of ${course.name}?`,
+      answer: course.signatureFeature
+    }
+  ]
+
   return (
     <>
       <GolfCourseStructuredData
@@ -54,6 +73,7 @@ export default async function GolfPage({
         { name: 'Golf', url: 'https://oahuunlocked.com/#golf' },
         { name: course.name, url: `https://oahuunlocked.com/golf/${slug}` },
       ]} />
+      <FAQStructuredData faqs={faqs} />
     <div className="min-h-screen bg-background">
       {/* Hero */}
       <div className="relative h-64 md:h-96 bg-muted overflow-hidden">

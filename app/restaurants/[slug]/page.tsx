@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { restaurants } from '@/data/restaurants'
 import { slugify } from '@/lib/slugify'
-import { RestaurantStructuredData, BreadcrumbStructuredData } from '@/components/seo/StructuredData'
+import { RestaurantStructuredData, BreadcrumbStructuredData, FAQStructuredData, FAQItem } from '@/components/seo/StructuredData'
 import { MapPin, Clock, Phone, DollarSign, Star, ExternalLink, ChevronLeft } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent } from '@/components/ui/card'
@@ -43,6 +43,25 @@ export default async function RestaurantPage({
   const restaurant = restaurants.find((r) => slugify(r.name) === slug)
   if (!restaurant) notFound()
 
+  const faqs: FAQItem[] = [
+    {
+      question: `What type of food does ${restaurant.name} serve?`,
+      answer: `${restaurant.name} serves ${restaurant.cuisine} cuisine. ${restaurant.description}`
+    },
+    {
+      question: `Where is ${restaurant.name} located?`,
+      answer: `${restaurant.name} is located at ${restaurant.address}. It is ${restaurant.distanceFromDukes} from central Waikiki${restaurant.walkingTime !== 'N/A' ? `, about ${restaurant.walkingTime} walk` : ''}.`
+    },
+    {
+      question: `What is the price range at ${restaurant.name}?`,
+      answer: `${restaurant.name} is rated ${restaurant.priceRange} for pricing. They are open ${restaurant.hours}.`
+    },
+    {
+      question: `What are the best dishes at ${restaurant.name}?`,
+      answer: `${restaurant.name} is known for: ${restaurant.specialties.join(', ')}.`
+    }
+  ]
+
   return (
     <>
       <RestaurantStructuredData
@@ -63,6 +82,7 @@ export default async function RestaurantPage({
         { name: 'Restaurants', url: 'https://oahuunlocked.com/#featured-restaurants' },
         { name: restaurant.name, url: `https://oahuunlocked.com/restaurants/${slug}` },
       ]} />
+      <FAQStructuredData faqs={faqs} />
 
       <div className="min-h-screen bg-background">
         {/* Hero image */}
