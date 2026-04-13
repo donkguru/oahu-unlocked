@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { posts } from '@/data/posts'
 import Header from '@/components/Header'
+import NewsletterSignup from '@/components/NewsletterSignup'
 
 export const metadata: Metadata = {
   title: 'Oahu Travel Blog — Tips, Guides & Local Advice | OahuUnlocked',
@@ -47,6 +48,7 @@ export default function BlogIndex() {
           </div>
         </div>
       </main>
+      <NewsletterSignup />
     </>
   )
 }

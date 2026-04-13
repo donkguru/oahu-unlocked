@@ -13,6 +13,7 @@ import WhereToStay from "@/components/WhereToStay";
 import HomeFAQ from "@/components/HomeFAQ";
 import AdUnit from "@/components/AdUnit";
 import { AD_SLOTS } from "@/lib/adSlots";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import dynamic from "next/dynamic";
 const RestaurantMap = dynamic(() => import("@/components/RestaurantMap"), { ssr: false });
 import { SearchProvider } from "@/contexts/SearchContext";
@@ -41,6 +42,7 @@ export default function HomeClient() {
         <section id="where-to-stay">
           <WhereToStay />
         </section>
+        <NewsletterSignup />
         <section id="explore-map">
           <RestaurantMap />
         </section>
