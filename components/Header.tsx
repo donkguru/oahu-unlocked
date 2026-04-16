@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Utensils, Map, Info, Flag, BedDouble, BookOpen, Users } from "lucide-react";
@@ -20,19 +20,23 @@ const navigation = [
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
 
   const scrollToSection = (href: string) => {
+    setIsOpen(false);
     if (href === "/") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      setIsOpen(false);
-    } else if (href.startsWith("#")) {
-      const element = document.getElementById(href.substring(1));
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-        setIsOpen(false);
+      if (pathname === "/") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        router.push("/");
       }
-    } else {
-      setIsOpen(false);
+    } else if (href.startsWith("#")) {
+      if (pathname === "/") {
+        const element = document.getElementById(href.substring(1));
+        if (element) element.scrollIntoView({ behavior: "smooth" });
+      } else {
+        router.push("/" + href);
+      }
     }
   };
 
