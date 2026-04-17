@@ -113,6 +113,42 @@ const Header = () => {
           </SheetContent>
         </Sheet>
       </div>
+
+      {/* Mobile Quick-Nav Strip */}
+      <div className="md:hidden border-t bg-background overflow-x-auto scrollbar-none">
+        <div className="flex items-center gap-2 px-4 py-2 w-max">
+          {navigation.map((item) => {
+            const Icon = item.icon;
+            const active = isActive(item.href);
+            if (!item.href.startsWith("#") && item.href !== "/") {
+              return (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-colors ${
+                    active
+                      ? "bg-primary text-primary-foreground"
+                      : "bg-primary text-primary-foreground opacity-80"
+                  }`}
+                >
+                  <Icon className="h-3 w-3" />
+                  {item.name}
+                </Link>
+              );
+            }
+            return (
+              <button
+                key={item.name}
+                onClick={() => scrollToSection(item.href)}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-colors bg-primary text-primary-foreground opacity-80 hover:opacity-100"
+              >
+                <Icon className="h-3 w-3" />
+                {item.name}
+              </button>
+            );
+          })}
+        </div>
+      </div>
     </header>
   );
 };
