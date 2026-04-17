@@ -112,16 +112,16 @@ const OahuGolf = () => {
 
         {/* Category Tabs */}
         <Tabs value={selectedCategory} onValueChange={setSelectedCategory} className="w-full">
-          <TabsList className="w-full flex flex-wrap h-auto justify-center gap-2 mb-8 bg-muted/50 p-2">
+          <TabsList className="flex overflow-x-auto scrollbar-none gap-2 mb-8 h-auto bg-transparent p-0 w-full justify-start md:justify-center">
             {categories.map((category) => (
-              <TabsTrigger 
-                key={category.id} 
+              <TabsTrigger
+                key={category.id}
                 value={category.id}
-                className="flex items-center gap-2"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap flex-none transition-colors bg-muted text-muted-foreground data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-none"
               >
-                <Flag className="h-4 w-4" />
+                <Flag className="h-3.5 w-3.5" />
                 {category.label}
-                <Badge variant="secondary" className="ml-1">
+                <Badge variant="secondary" className="ml-1 text-xs">
                   {category.count}
                 </Badge>
               </TabsTrigger>

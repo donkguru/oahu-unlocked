@@ -64,18 +64,17 @@ const OahuAdventures = () => {
 
         {/* Category Tabs */}
         <Tabs value={activeCategory} onValueChange={setActiveCategory} className="w-full">
-          <TabsList className="grid w-full grid-cols-2 md:grid-cols-5 mb-8 h-auto">
+          <TabsList className="flex overflow-x-auto scrollbar-none gap-2 mb-8 h-auto bg-transparent p-0 w-full justify-start md:justify-center">
             {categories.map((category) => {
               const Icon = categoryIcons[category as keyof typeof categoryIcons];
               return (
                 <TabsTrigger
                   key={category}
                   value={category}
-                  className="flex items-center gap-2 py-3 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap flex-none transition-colors bg-muted text-muted-foreground data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-none"
                 >
-                  <Icon className="h-4 w-4" />
-                  <span className="hidden sm:inline">{category}</span>
-                  <span className="sm:hidden">{category.split(" ")[0]}</span>
+                  <Icon className="h-3.5 w-3.5" />
+                  {category}
                 </TabsTrigger>
               );
             })}
