@@ -173,11 +173,14 @@ Restaurants listed on the site with no web presence — warm leads for web desig
 - Centered restaurant card grids across all sections (FeaturedRestaurants, CuisineGuide, IndianRestaurants)
 - Centered cuisine category headers in CuisineGuide
 - Coral Crater Adventure Park (id 34) was already in data but hidden — fixed category to "Extreme Adventures" so it appears on site
-- Added Salvation Army Kroc Center Hawaii (adventure id 47, Water Activities) — Olympic pool, Adventure Cove waterslides, lazy river, splash pad; Ewa Beach
-- Added Wai Kai Wave & Lagoon (adventure id 49, Water Activities) — Hawaii's first surf wave, 52-acre lagoon, inflatable courses
-- Added Wet 'n' Wild Hawaii (adventure id 50, Water Activities) — 26 rides, Kapolei water park
-- Added The LookOut Food & Drink at Wai Kai (restaurant id 102) — waterfront dining, live music Thu–Sun
+- Added Salvation Army Kroc Center Hawaii (adventure id 47, Water Activities)
+- Added Wai Kai Wave & Lagoon (adventure id 49, Water Activities)
+- Added Wet 'n' Wild Hawaii (adventure id 50, Water Activities, moved from Extreme Adventures)
+- Added The LookOut Food & Drink at Wai Kai (restaurant id 102)
 - Updated images: Wai Kai → wave pool surfer, Coral Crater → aerial obstacle course, Wet n Wild → waterpark
+- Added mobile quick-nav strip: horizontal scrollable orange pill buttons (Home, Restaurants, Adventures, Golf, Where to Stay, Blog, About) below header on mobile
+- Fixed mobile scroll offset — sections no longer hidden behind taller sticky header
+- Matched adventure & golf category tab buttons to orange pill style (consistent across mobile and desktop)
 - Obsidian-style project notes created at docs/OahuUnlocked.md
 
 ### 2026-04-16 (session 2)
