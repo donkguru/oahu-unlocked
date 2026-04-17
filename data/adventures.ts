@@ -668,5 +668,33 @@ export const adventures: Adventure[] = [
     website: "https://www.honolulu.gov/parks/hbg.html",
     image: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=800&h=512&fit=crop",
     highlights: ["400 Acres", "Ko'olau Mountain Backdrop", "Most Photographed Views", "Free Entry"]
+  },
+  {
+    id: 47,
+    name: "Wai Kai Wave & Lagoon",
+    category: "Water Activities",
+    description: "West Oahu's premier waterfront destination featuring Hawaii's first stationary deep-water surf wave — the Wai Kai Wave — overlooking a 52-acre lagoon. Ride the big-turn wave, tackle the AquaVenture and AquaPeakz inflatable obstacle courses, or paddleboard the calm lagoon waters. Dining, live events, and shopping round out the experience.",
+    priceRange: "$30-120",
+    duration: "2-5 hours",
+    difficulty: "Easy",
+    bestTime: "Thursday–Sunday (closed Tue–Wed)",
+    location: "Ewa Beach, West Oahu",
+    website: "https://www.waikai.com/",
+    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=512&fit=crop",
+    highlights: ["Hawaii's First Surf Wave", "52-Acre Lagoon", "Inflatable Obstacle Course", "Waterfront Dining"]
+  },
+  {
+    id: 48,
+    name: "Wet 'n' Wild Hawaii",
+    category: "Extreme Adventures",
+    description: "Oahu's only full-scale water park with 26 rides and attractions in Kapolei. Thrill-seekers can ride high-speed slides and body flumes while families enjoy lazy rivers and splash zones. A great full-day escape from the beach heat on the West Side.",
+    priceRange: "$55-70",
+    duration: "4-8 hours",
+    difficulty: "Easy",
+    bestTime: "Weekdays to avoid crowds",
+    location: "Kapolei, West Oahu",
+    website: "https://wetnwildhawaii.com/",
+    image: "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?w=800&h=512&fit=crop",
+    highlights: ["26 Rides & Attractions", "Oahu's Only Water Park", "Lazy River", "Family Friendly"]
   }
 ];

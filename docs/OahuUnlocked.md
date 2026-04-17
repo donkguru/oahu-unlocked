@@ -94,8 +94,8 @@ Counts as of 2026-04-16:
 
 | Category | Count |
 |---|---|
-| Restaurants | 101 |
-| Adventures | 46 |
+| Restaurants | 102 |
+| Adventures | 48 |
 | Golf Courses | 22 |
 
 **Data files:** `data/restaurants.ts`, `data/adventures.ts`, `data/golf.ts`
@@ -170,6 +170,9 @@ Restaurants listed on the site with no web presence — warm leads for web desig
 ## Changelog
 
 ### 2026-04-17
+- Added Wai Kai Wave & Lagoon (adventure id 47) and Wet 'n' Wild Hawaii (adventure id 48)
+- Added The LookOut Food & Drink at Wai Kai (restaurant id 102)
+- Note: Coral Crater Adventure Park (id 34) was already in the data
 - Centered restaurant card grids across all sections (FeaturedRestaurants, CuisineGuide, IndianRestaurants)
 - Centered cuisine category headers in CuisineGuide
 

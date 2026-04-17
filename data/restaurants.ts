@@ -1547,6 +1547,27 @@ export const restaurants: Restaurant[] = [
     driveTime: "2 minutes",
     specialties: ["Hawaiian Coffee", "Acai Bowl", "Latte"],
     parking: "Royal Hawaiian Center parking"
+  },
+  {
+    id: 102,
+    name: "The LookOut Food & Drink",
+    category: "Contemporary American",
+    cuisine: "Contemporary American",
+    coordinates: { lat: 21.3269, lng: -158.0197 },
+    rating: 4.5,
+    priceRange: "$$",
+    phone: "(808) 900-3579",
+    hours: "Mon 11am-9pm | Tue-Wed 3-9pm | Thu 11am-9pm | Fri-Sat 11am-10pm | Sun 11am-9pm",
+    address: "91-1621 Keoneula Blvd Ste 1200, Ewa Beach, HI 96706",
+    description: "Wai Kai's signature waterfront restaurant and social hub on Oahu's West Side. Locally-sourced, health-forward menu featuring Kalua Pork Nachos, epic burgers, loaded tater tots, and the signature 'Wai Tai' cocktail. Live music Thursday through Sunday. Sweeping views of the Wai Kai Wave and lagoon.",
+    highlights: ["Waterfront Views", "Live Music Thu-Sun", "Locally Sourced", "Creative Cocktails"],
+    website: "https://www.waikailookout.com/",
+    image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&h=400&fit=crop",
+    distanceFromDukes: "~22 miles",
+    walkingTime: "N/A",
+    driveTime: "~35 minutes",
+    specialties: ["Kalua Pork Nachos", "Wai Tai Cocktail", "Burgers", "Roasted Veggie Bowl"],
+    parking: "Free parking at Wai Kai"
   }
 ];
 
