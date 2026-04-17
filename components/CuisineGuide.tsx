@@ -164,19 +164,19 @@ const CuisineGuide = () => {
                     <Card key={restaurant.id} className="glass-card hover:shadow-lg transition-all duration-300 overflow-hidden group w-full max-w-sm">
                       {/* Restaurant Image */}
                       <div className="relative h-40 overflow-hidden">
-                        <img 
-                          src={restaurant.image} 
+                        <img
+                          src={restaurant.image}
                           alt={`${restaurant.name} in Waikiki Hawaii`}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                           loading="lazy"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                        <div className="absolute bottom-3 left-3 right-3">
-                          <h4 className="text-lg font-bold text-foreground">{restaurant.name}</h4>
-                          <p className="text-sm text-muted-foreground">{restaurant.cuisine}</p>
-                        </div>
                       </div>
-                      
+
+                      <CardHeader className="px-4 pt-4 pb-0">
+                        <h4 className="text-lg font-bold">{restaurant.name}</h4>
+                        <p className="text-sm text-muted-foreground">{restaurant.cuisine}</p>
+                      </CardHeader>
+
                       <CardContent className="p-4 space-y-3">
                         {/* Restaurant Info */}
                         <div className="flex justify-between items-center">
