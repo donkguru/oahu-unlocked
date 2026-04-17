@@ -27,9 +27,9 @@ const IndianRestaurants = () => {
         </div>
 
         {/* Restaurants Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="flex flex-wrap justify-center gap-6">
           {indianRestaurants.map((restaurant) => (
-            <Card key={restaurant.id} className="overflow-hidden hover:shadow-xl transition-shadow duration-300">
+            <Card key={restaurant.id} className="overflow-hidden hover:shadow-xl transition-shadow duration-300 w-full md:w-[calc(50%-12px)]">
               {/* Restaurant Image */}
               <div className="relative h-40 overflow-hidden">
                 <img
