@@ -112,9 +112,9 @@ const FeaturedRestaurants = () => {
               </div>
               
               {/* Restaurant Grid for this Hotel */}
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="flex flex-wrap justify-center gap-6">
                 {hotelGroup.restaurants.map((restaurant) => (
-                  <Card key={restaurant.id} className="glass-card hover:shadow-lg transition-all duration-300 overflow-hidden group">
+                  <Card key={restaurant.id} className="glass-card hover:shadow-lg transition-all duration-300 overflow-hidden group w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
                     {/* Restaurant Image */}
                     <div className="relative h-48 overflow-hidden">
                       <img 
