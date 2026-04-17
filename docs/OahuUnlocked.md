@@ -95,7 +95,7 @@ Counts as of 2026-04-16:
 | Category | Count |
 |---|---|
 | Restaurants | 102 |
-| Adventures | 48 |
+| Adventures | 50 |
 | Golf Courses | 22 |
 
 **Data files:** `data/restaurants.ts`, `data/adventures.ts`, `data/golf.ts`
@@ -170,11 +170,15 @@ Restaurants listed on the site with no web presence — warm leads for web desig
 ## Changelog
 
 ### 2026-04-17
-- Added Wai Kai Wave & Lagoon (adventure id 47) and Wet 'n' Wild Hawaii (adventure id 48)
-- Added The LookOut Food & Drink at Wai Kai (restaurant id 102)
-- Note: Coral Crater Adventure Park (id 34) was already in the data
 - Centered restaurant card grids across all sections (FeaturedRestaurants, CuisineGuide, IndianRestaurants)
 - Centered cuisine category headers in CuisineGuide
+- Coral Crater Adventure Park (id 34) was already in data but hidden — fixed category to "Extreme Adventures" so it appears on site
+- Added Salvation Army Kroc Center Hawaii (adventure id 47, Water Activities) — Olympic pool, Adventure Cove waterslides, lazy river, splash pad; Ewa Beach
+- Added Wai Kai Wave & Lagoon (adventure id 49, Water Activities) — Hawaii's first surf wave, 52-acre lagoon, inflatable courses
+- Added Wet 'n' Wild Hawaii (adventure id 50, Water Activities) — 26 rides, Kapolei water park
+- Added The LookOut Food & Drink at Wai Kai (restaurant id 102) — waterfront dining, live music Thu–Sun
+- Updated images: Wai Kai → wave pool surfer, Coral Crater → aerial obstacle course, Wet n Wild → waterpark
+- Obsidian-style project notes created at docs/OahuUnlocked.md
 
 ### 2026-04-16 (session 2)
 - AdSense slot ID `9993349200` activated in `lib/adSlots.ts`
