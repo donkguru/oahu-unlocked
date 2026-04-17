@@ -671,6 +671,20 @@ export const adventures: Adventure[] = [
   },
   {
     id: 47,
+    name: "Salvation Army Kroc Center Hawaii",
+    category: "Water Activities",
+    description: "Hawaii's largest community center features a world-class aquatic complex on 15 acres in Ewa Beach. The 14-lane Olympic competition pool has climbing walls, a double flume slide, and a diving board. Adventure Cove Leisure Pool adds two waterslides, dual lazy rivers, an interactive splash pad, and the Vortex play structure — great value for families on the West Side.",
+    priceRange: "$10-20",
+    duration: "2-4 hours",
+    difficulty: "Easy",
+    bestTime: "Weekday mornings",
+    location: "Ewa Beach, West Oahu",
+    website: "https://kroccenterhawaii.org/kroc-hawaii/aquatics/",
+    image: "https://images.unsplash.com/photo-1519315901367-f34ff9154487?w=800&h=512&fit=crop",
+    highlights: ["Olympic Pool", "Waterslides", "Lazy River", "Splash Pad"]
+  },
+  {
+    id: 49,
     name: "Wai Kai Wave & Lagoon",
     category: "Water Activities",
     description: "West Oahu's premier waterfront destination featuring Hawaii's first stationary deep-water surf wave — the Wai Kai Wave — overlooking a 52-acre lagoon. Ride the big-turn wave, tackle the AquaVenture and AquaPeakz inflatable obstacle courses, or paddleboard the calm lagoon waters. Dining, live events, and shopping round out the experience.",
@@ -684,9 +698,9 @@ export const adventures: Adventure[] = [
     highlights: ["Hawaii's First Surf Wave", "52-Acre Lagoon", "Inflatable Obstacle Course", "Waterfront Dining"]
   },
   {
-    id: 48,
+    id: 50,
     name: "Wet 'n' Wild Hawaii",
-    category: "Extreme Adventures",
+    category: "Water Activities",
     description: "Oahu's only full-scale water park with 26 rides and attractions in Kapolei. Thrill-seekers can ride high-speed slides and body flumes while families enjoy lazy rivers and splash zones. A great full-day escape from the beach heat on the West Side.",
     priceRange: "$55-70",
     duration: "4-8 hours",
