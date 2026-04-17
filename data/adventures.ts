@@ -490,7 +490,7 @@ export const adventures: Adventure[] = [
   {
     id: 34,
     name: "Coral Crater Adventure Park",
-    category: "Adventure Sports",
+    category: "Extreme Adventures",
     description: "Action-packed adventure park built inside a natural volcanic crater in Kapolei. Offers ziplines, rappelling, rock climbing, ATV tours, and the thrilling Mega Drop — all against a dramatic crater backdrop.",
     priceRange: "$50-150",
     duration: "2-4 hours",
