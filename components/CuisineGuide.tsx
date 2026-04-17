@@ -170,7 +170,7 @@ const CuisineGuide = () => {
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                           loading="lazy"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                         <div className="absolute bottom-3 left-3 right-3">
                           <h4 className="text-lg font-bold text-foreground">{restaurant.name}</h4>
                           <p className="text-sm text-muted-foreground">{restaurant.cuisine}</p>
