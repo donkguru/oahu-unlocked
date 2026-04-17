@@ -144,14 +144,14 @@ const CuisineGuide = () => {
             return (
               <div key={categoryIndex} className="space-y-6">
                 {/* Category Header */}
-                <div className="flex items-center gap-4 mb-6">
+                <div className="flex flex-col items-center text-center gap-4 mb-6">
                   <div className="p-3 rounded-full bg-primary/10">
                     <Icon className="h-6 w-6 text-primary" />
                   </div>
                   <div>
                     <h3 className="text-2xl font-bold">{category.name}</h3>
                     <p className="text-muted-foreground">{category.description}</p>
-                    <div className="flex items-center gap-4 mt-2">
+                    <div className="flex items-center justify-center gap-4 mt-2">
                       <Badge variant="outline">{category.restaurantCount} restaurants</Badge>
                       <Badge variant="outline">{category.priceRange}</Badge>
                     </div>
