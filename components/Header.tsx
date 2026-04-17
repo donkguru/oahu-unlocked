@@ -28,7 +28,11 @@ const Header = () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
       } else if (href.startsWith("#")) {
         const element = document.getElementById(href.substring(1));
-        if (element) element.scrollIntoView({ behavior: "smooth" });
+        if (element) {
+          const headerHeight = document.querySelector("header")?.offsetHeight ?? 64;
+          const top = element.getBoundingClientRect().top + window.scrollY - headerHeight;
+          window.scrollTo({ top, behavior: "smooth" });
+        }
       }
     } else {
       window.location.href = href.startsWith("#") ? "/" + href : href;
