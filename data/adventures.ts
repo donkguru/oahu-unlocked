@@ -680,7 +680,7 @@ export const adventures: Adventure[] = [
     bestTime: "Thursday–Sunday (closed Tue–Wed)",
     location: "Ewa Beach, West Oahu",
     website: "https://www.waikai.com/",
-    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=512&fit=crop",
+    image: "https://images.unsplash.com/photo-1455729552865-3658a5d39692?w=800&h=512&fit=crop",
     highlights: ["Hawaii's First Surf Wave", "52-Acre Lagoon", "Inflatable Obstacle Course", "Waterfront Dining"]
   },
   {
