@@ -498,7 +498,7 @@ export const adventures: Adventure[] = [
     bestTime: "Morning to Afternoon",
     location: "Kapolei, West Oahu",
     website: "https://www.coralcrater.com",
-    image: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=800&h=512&fit=crop",
+    image: "https://images.unsplash.com/photo-1522163182402-834f871fd851?w=800&h=512&fit=crop",
     highlights: ["Ziplines", "Rock Climbing", "Rappelling", "Volcanic Crater"]
   },
   {
