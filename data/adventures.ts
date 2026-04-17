@@ -694,7 +694,7 @@ export const adventures: Adventure[] = [
     bestTime: "Weekdays to avoid crowds",
     location: "Kapolei, West Oahu",
     website: "https://wetnwildhawaii.com/",
-    image: "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?w=800&h=512&fit=crop",
+    image: "https://images.unsplash.com/photo-1575783970733-1aaedde1db74?w=800&h=512&fit=crop",
     highlights: ["26 Rides & Attractions", "Oahu's Only Water Park", "Lazy River", "Family Friendly"]
   }
 ];
