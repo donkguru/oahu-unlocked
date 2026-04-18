@@ -45,9 +45,19 @@ export default function ViatorTours({ tours }: { tours: ViatorTour[] }) {
           </a>
         ))}
       </div>
-      <p className="text-xs text-muted-foreground">
-        Tours provided by Viator. We may earn a commission on bookings at no extra cost to you.
-      </p>
+      <div className="flex flex-col items-center gap-3">
+        <a
+          href="https://www.viator.com/Oahu/d672-ttd?pid=P00296758&mcid=42383&medium=link&medium_version=selector"
+          target="_blank"
+          rel="noopener noreferrer sponsored"
+          className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-2.5 rounded-full transition-colors text-sm"
+        >
+          Browse All Oahu Tours on Viator <ExternalLink className="h-4 w-4" />
+        </a>
+        <p className="text-xs text-muted-foreground">
+          Tours provided by Viator. We may earn a commission on bookings at no extra cost to you.
+        </p>
+      </div>
     </div>
   )
 }
