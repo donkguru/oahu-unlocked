@@ -184,6 +184,8 @@ Restaurants listed on the site with no web presence — warm leads for web desig
 - Added Bing Webmaster verification (`msvalidate.01: 3FCDD1800A2A3BFA9607C549DA1437FD`)
 - Added Yandex Webmaster verification for `www.oahuunlocked.com` — meta tag + HTML file
 - Submitted sitemap to Yandex — 155 links, no errors, indexing in 3–7 days
+- Added Pinterest domain verification — verified 2026-04-17 (meta tag `p:domain_verify`)
+- Bing sitemap submitted successfully — verification failed on bare domain, retry with www
 - Obsidian-style project notes created at docs/OahuUnlocked.md
 
 ### 2026-04-16 (session 2)
@@ -209,7 +211,7 @@ Restaurants listed on the site with no web presence — warm leads for web desig
 | Google Search Console | ✅ Verified | Submitted |
 | Bing Webmaster Tools | ✅ Verified | Submit sitemap next |
 | Yandex Webmaster | ✅ Verified + sitemap submitted 2026-04-17 | 155 links, no errors |
-| Pinterest | ⏳ Not started | — |
+| Pinterest | ✅ Verified 2026-04-17 | — |
 
 **Bing:** Verified via meta tag `3FCDD1800A2A3BFA9607C549DA1437FD` — still need to submit sitemap at bing.com/webmasters
 **Yandex:** Verified as `www.oahuunlocked.com` (not bare domain — Vercel redirects bare → www). Sitemap submitted 2026-04-17. Index in 3–7 days.
@@ -218,8 +220,8 @@ Restaurants listed on the site with no web presence — warm leads for web desig
 
 ## To Do
 
-- [ ] Bing — submit sitemap `https://www.oahuunlocked.com/sitemap.xml` at bing.com/webmasters
-- [ ] Pinterest — verify domain, set up business account for rich pins (travel content performs well)
+- [ ] Bing — re-verify using `https://www.oahuunlocked.com` (www) — sitemap already submitted and working
+- [ ] Pinterest — set up profile: business name "OahuUnlocked", create boards (Waikiki Restaurants, Oahu Adventures, Oahu Golf, Where to Stay), start pinning
 - [ ] GolfNow affiliate — check dashboard for approval (applied 2026-04-12)
 - [ ] AdSense — once approved, create separate ad units per placement for better tracking
 - [ ] Re-run gap analysis in a few weeks to catch new openings
