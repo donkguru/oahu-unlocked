@@ -80,6 +80,7 @@ export const metadata: Metadata = {
     other: {
       "msvalidate.01": "3FCDD1800A2A3BFA9607C549DA1437FD",
       "yandex-verification": "15149030de45df51",
+      "p:domain_verify": "8f44f933cb236e4990068aed813cedc9",
     },
   },
   other: {
