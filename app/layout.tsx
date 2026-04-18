@@ -77,6 +77,9 @@ export const metadata: Metadata = {
   },
   verification: {
     google: "QOzNpJEN7bJ_BfJcvVKyQAh1Xc1RgLYwkIFUygkwvKc",
+    other: {
+      "msvalidate.01": "3FCDD1800A2A3BFA9607C549DA1437FD",
+    },
   },
   other: {
     "geo.region": "US-HI",
