@@ -90,7 +90,7 @@ Set in Vercel dashboard under **Production** environment.
 
 ## Data & Listings
 
-Counts as of 2026-04-16:
+Counts as of 2026-04-17:
 
 | Category | Count |
 |---|---|
@@ -181,6 +181,9 @@ Restaurants listed on the site with no web presence — warm leads for web desig
 - Added mobile quick-nav strip: horizontal scrollable orange pill buttons (Home, Restaurants, Adventures, Golf, Where to Stay, Blog, About) below header on mobile
 - Fixed mobile scroll offset — sections no longer hidden behind taller sticky header
 - Matched adventure & golf category tab buttons to orange pill style (consistent across mobile and desktop)
+- Added Bing Webmaster verification (`msvalidate.01: 3FCDD1800A2A3BFA9607C549DA1437FD`)
+- Added Yandex Webmaster verification for `www.oahuunlocked.com` — meta tag + HTML file
+- Submitted sitemap to Yandex — 155 links, no errors, indexing in 3–7 days
 - Obsidian-style project notes created at docs/OahuUnlocked.md
 
 ### 2026-04-16 (session 2)
@@ -199,8 +202,24 @@ Restaurants listed on the site with no web presence — warm leads for web desig
 
 ---
 
+## Search Engine Submissions
+
+| Engine | Status | Sitemap |
+|---|---|---|
+| Google Search Console | ✅ Verified | Submitted |
+| Bing Webmaster Tools | ✅ Verified | Submit sitemap next |
+| Yandex Webmaster | ✅ Verified + sitemap submitted 2026-04-17 | 155 links, no errors |
+| Pinterest | ⏳ Not started | — |
+
+**Bing:** Verified via meta tag `3FCDD1800A2A3BFA9607C549DA1437FD` — still need to submit sitemap at bing.com/webmasters
+**Yandex:** Verified as `www.oahuunlocked.com` (not bare domain — Vercel redirects bare → www). Sitemap submitted 2026-04-17. Index in 3–7 days.
+
+---
+
 ## To Do
 
+- [ ] Bing — submit sitemap `https://www.oahuunlocked.com/sitemap.xml` at bing.com/webmasters
+- [ ] Pinterest — verify domain, set up business account for rich pins (travel content performs well)
 - [ ] GolfNow affiliate — check dashboard for approval (applied 2026-04-12)
 - [ ] AdSense — once approved, create separate ad units per placement for better tracking
 - [ ] Re-run gap analysis in a few weeks to catch new openings
