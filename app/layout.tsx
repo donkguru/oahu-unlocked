@@ -79,7 +79,7 @@ export const metadata: Metadata = {
     google: "QOzNpJEN7bJ_BfJcvVKyQAh1Xc1RgLYwkIFUygkwvKc",
     other: {
       "msvalidate.01": "3FCDD1800A2A3BFA9607C549DA1437FD",
-      "yandex-verification": "d6a1c2866a529984",
+      "yandex-verification": "15149030de45df51",
     },
   },
   other: {
