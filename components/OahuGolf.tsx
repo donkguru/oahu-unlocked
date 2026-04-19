@@ -1,15 +1,16 @@
 'use client'
 
 import { useState } from "react";
+import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ExternalLink } from "@/components/ui/external-link";
-import { 
-  Flag, 
-  MapPin, 
-  Clock, 
+import {
+  Flag,
+  MapPin,
+  Clock,
   DollarSign,
   Users,
   ShoppingBag,
@@ -23,6 +24,7 @@ import {
   Phone
 } from "lucide-react";
 import { golfCourses } from "@/data/golfCourses";
+import { slugify } from "@/lib/slugify";
 
 const OahuGolf = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
@@ -223,15 +225,22 @@ const OahuGolf = () => {
 
                     {/* Contact & Book */}
                     <div className="space-y-2">
-                      <ExternalLink 
+                      <Link href={`/golf/${slugify(course.name)}`} className="block">
+                        <Button className="w-full" variant="default">
+                          View Details
+                        </Button>
+                      </Link>
+
+                      <ExternalLink
                         href={course.website}
                         className="block"
+                        showIcon={false}
                       >
-                        <Button className="w-full" variant="default">
-                          View Details & Book Tee Time
+                        <Button className="w-full" variant="outline">
+                          Book Tee Time
                         </Button>
                       </ExternalLink>
-                      
+
                       <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
                         <Phone className="h-4 w-4" />
                         <span>{course.phone}</span>
