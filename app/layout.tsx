@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import "./globals.css";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import Footer from "@/components/Footer";
+import CookieConsent from "@/components/CookieConsent";
 import { Analytics } from "@vercel/analytics/next";
 
 const geist = Geist({
@@ -117,6 +118,7 @@ export default function RootLayout({
         {children}
         <Analytics />
         <Footer />
+        <CookieConsent />
       </body>
     </html>
   );

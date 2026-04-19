@@ -26,6 +26,7 @@ const footerNav = [
     links: [
       { label: "Blog", href: "/blog" },
       { label: "About", href: "/about" },
+      { label: "Privacy Policy", href: "/privacy" },
       { label: "Sitemap", href: "/sitemap.xml" },
     ],
   },
