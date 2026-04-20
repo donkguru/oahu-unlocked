@@ -34,7 +34,7 @@ export async function searchViatorTours(query: string, count = 4): Promise<Viato
         pagination: { start: 1, count },
         currency: 'USD',
       }),
-      next: { revalidate: 86400 }, // cache 24h
+      next: { revalidate: 3600 }, // cache 1h — Viator image URLs expire
     })
 
     if (!res.ok) return []
