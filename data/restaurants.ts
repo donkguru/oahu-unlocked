@@ -1140,7 +1140,7 @@ export const restaurants: Restaurant[] = [
     address: "1960 Kapiolani Blvd STE 109, Honolulu, HI 96826",
     description: "Popular Indian restaurant featuring North and South Indian cuisine with excellent vegetarian and vegan options. Known for authentic flavors and friendly service.",
     highlights: ["Vegetarian Friendly", "Vegan Options", "North & South Indian", "Authentic Flavors"],
-    website: "https://www.google.com/maps/search/Tadka+Indian+Cuisine+Honolulu/",
+    website: "https://www.tadkaindian.com/",
     image: "https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?w=600&h=400&fit=crop",
     distanceFromDukes: "1.4 miles",
     walkingTime: "28 minutes",
