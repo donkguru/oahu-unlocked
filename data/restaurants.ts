@@ -754,7 +754,7 @@ export const restaurants: Restaurant[] = [
     address: "47-653 Kamehameha Hwy, Kaneohe, HI 96744",
     description: "Hawaii's first craft distillery producing premium spirits. Tasting room and restaurant with locally-sourced menu.",
     highlights: ["Craft Distillery", "Local Spirits", "Farm-to-Table"],
-    website: "https://koolaudistillery.com/",
+    website: "https://www.koolaudistillery.com/",
     image: "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=600&h=400&fit=crop",
     distanceFromDukes: "12 miles",
     walkingTime: "N/A",
