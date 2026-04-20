@@ -1161,7 +1161,7 @@ export const restaurants: Restaurant[] = [
     address: "1289 S King St Unit 101, Honolulu, HI 96814",
     description: "Cozy Indian restaurant offering Himalayan and Nepalese specialties alongside classic Indian favorites. Great for vegetarians and vegans.",
     highlights: ["Himalayan Cuisine", "Nepalese Dishes", "Vegan Friendly", "Cozy Atmosphere"],
-    website: "https://www.instagram.com/spiceupindian/",
+    website: "https://www.spiceupindian.com/",
     image: "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=600&h=400&fit=crop",
     distanceFromDukes: "1.4 miles",
     walkingTime: "28 minutes",
