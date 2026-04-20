@@ -24,7 +24,7 @@ export default function ViatorTours({ tours }: { tours: ViatorTour[] }) {
                     src={tour.image}
                     alt={`${tour.title} — Oahu Hawaii tour via Viator`}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    onError={(e) => { (e.target as HTMLImageElement).parentElement!.style.display = 'none' }}
+                    onError={(e) => { const el = (e.target as HTMLImageElement).parentElement; if (el) el.style.display = 'none' }}
                   />
                 </div>
               )}
