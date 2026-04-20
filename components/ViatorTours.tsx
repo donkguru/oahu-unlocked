@@ -1,3 +1,5 @@
+'use client'
+
 import { Star, ExternalLink } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
 import type { ViatorTour } from '@/lib/viator'
