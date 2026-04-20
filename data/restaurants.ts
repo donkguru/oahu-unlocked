@@ -238,28 +238,6 @@ export const restaurants: Restaurant[] = [
 
   // 7-10 Minutes Walk - Hyatt Regency & Others
   {
-    id: 9,
-    name: "Japengo",
-    category: "Contemporary Asian",
-    cuisine: "Contemporary Asian",
-    coordinates: { lat: 21.2754, lng: -157.8255 },
-    rating: 4.4,
-    priceRange: "$$$",
-    phone: "(808) 923-1234",
-    hours: "5:30 PM - 10:00 PM",
-    address: "2424 Kalakaua Ave, Honolulu, HI 96815",
-    description: "Sophisticated Asian fusion cuisine featuring fresh sushi, robata grill items, and innovative cocktails.",
-    highlights: ["Fresh Sushi", "Robata Grill", "Asian Fusion", "Innovative Cocktails"],
-    website: "https://www.hyatt.com/en-US/hotel/hawaii/hyatt-regency-waikiki-beach-resort-and-spa/dining",
-    image: "https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?w=600&h=400&fit=crop",
-    distanceFromDukes: "7 min walk",
-    walkingTime: "550 meters",
-    specialties: ["Fresh Sushi", "Robata Grill", "Asian Fusion"],
-    parking: "Self parking available",
-    hotel: "Hyatt Regency Waikiki",
-    hotelWebsite: "https://www.hyatt.com/en-US/hotel/hawaii/hyatt-regency-waikiki-beach-resort-and-spa"
-  },
-  {
     id: 10,
     name: "Shor American Seafood Grill",
     category: "American Seafood",
