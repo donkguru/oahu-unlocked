@@ -926,7 +926,7 @@ export const restaurants: Restaurant[] = [
     address: "7192 Kalanianaole Hwy, Honolulu, HI 96825",
     description: "Popular brewpub serving craft beers and pub fare. Great spot for beer lovers with large outdoor seating.",
     highlights: ["Craft Beer", "Outdoor Seating", "Pub Favorites"],
-    website: "http://konabrewingco.com/",
+    website: "https://www.konabrewinghawaii.com/",
     image: "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&h=400&fit=crop",
     distanceFromDukes: "8.2 miles",
     walkingTime: "N/A",
