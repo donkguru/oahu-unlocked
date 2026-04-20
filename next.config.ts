@@ -11,7 +11,7 @@ const ADSENSE = "https://pagead2.googlesyndication.com https://googleads.g.doubl
 const MAPS = "https://maps.googleapis.com https://maps.gstatic.com https://*.googleapis.com";
 const VIATOR = "https://api.viator.com";
 const BOOKING = "https://www.booking.com";
-const IMAGES = "https://images.unsplash.com";
+const IMAGES = "https://images.unsplash.com https://*.viator.com https://*.viatortechnology.com https://hb.viator.com";
 
 const csp = [
   `default-src ${SELF}`,
